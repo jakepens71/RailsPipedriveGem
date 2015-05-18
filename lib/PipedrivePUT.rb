@@ -26,7 +26,8 @@ module PipedrivePUT
           
 
 	  @more_items = true
-	  @newData = []
+
+	  @newData = Array.new
 
 	  while @more_items == true do
 		#puts @more_items
@@ -34,15 +35,14 @@ module PipedrivePUT
 		#puts @base
 		@response = RestClient.get @base.to_s, {:accept => :json }
 		@data = JSON.parse(@response)
-		@newData.push(JSON.parse(@response))
+		@newData.push(@data["data"])
 		@pagination = @data['additional_data']['pagination']
 		@more_items = @pagination['more_items_in_collection']
 		#puts @more_items
 		@start = @pagination['next_start']
 		#puts @start
           end
-
-	return @newData
+	 return @newData
 
 	end
 

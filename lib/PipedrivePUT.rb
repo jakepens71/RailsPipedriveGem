@@ -42,7 +42,7 @@ module PipedrivePUT
 		#puts @start
           end
 
-	return JSON.parse(@newData)
+	return @newData
 
 	end
 

@@ -29,20 +29,20 @@ module PipedrivePUT
 	  @newData = ""
 
 	  while @more_items == true do
-		puts @more_items
+		#puts @more_items
 		@base = 'https://api.pipedrive.com/v1/organizations?start=' + @start.to_s + '&limit=500&api_token=' + @key.to_s
-		puts @base
+		#puts @base
 		@response = RestClient.get @base.to_s, {:accept => :json }
 		@data = JSON.parse(@response)
 		@newData = @newData + @response
 		@pagination = @data['additional_data']['pagination']
 		@more_items = @pagination['more_items_in_collection']
-		puts @more_items
+		#puts @more_items
 		@start = @pagination['next_start']
-		puts @start
+		#puts @start
           end
 
-	return @newData
+	return JSON.parse(@newData)
 
 	end
 

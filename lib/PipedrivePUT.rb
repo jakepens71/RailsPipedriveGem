@@ -1,7 +1,7 @@
 require "PipedrivePUT/version"
 
-require 'rest-client'
 require 'json'
+require 'httparty'
 
 module PipedrivePUT
   
@@ -15,7 +15,7 @@ module PipedrivePUT
 
 	def self.getDeal(id)
 	  @base = 'https://api.pipedrive.com/v1/deals/' + id.to_s + '?api_token=' + @key.to_s
-	  @response = RestClient.get @base.to_s, {:accept => :json}
+	  @response = HTTParty.get(@base.to_s)
 	  JSON.parse(@response)
 	end
 
@@ -31,20 +31,10 @@ module PipedrivePUT
 		#puts @more_items
 		@base = 'https://api.pipedrive.com/v1/organizations?start=' + @start.to_s + '&limit=500&api_token=' + @key.to_s
 		#puts @base
-		@response = RestClient.get @base.to_s, {:accept => :json }
-		@data = JSON.parse(@response)
-
-		@data['data'] = Hash[@data['data'].map {|k, v| [k, v] }]	
-
-		@table.merge!(@data['data'])
-		@pagination = @data['additional_data']['pagination']
-		@more_items = @pagination['more_items_in_collection']
-		#puts @more_items
-		@start = @pagination['next_start']
-		#puts @start
+		@response = HTTParty.get(@base.to_s)
+		@data = @response["data"]
           end
 
-	return @table
 	end
 
 end

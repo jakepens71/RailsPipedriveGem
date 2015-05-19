@@ -33,7 +33,7 @@ module PipedrivePUT
 		#puts @base
 		@response = HTTParty.get(@base.to_s), {format: :json}
 
-		response['data'].push(response['data'])
+		@response['data'].push(@response['data'])
 
 
 

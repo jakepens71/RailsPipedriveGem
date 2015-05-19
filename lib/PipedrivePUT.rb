@@ -31,10 +31,21 @@ module PipedrivePUT
 		#puts @more_items
 		@base = 'https://api.pipedrive.com/v1/organizations?start=' + @start.to_s + '&limit=500&api_token=' + @key.to_s
 		#puts @base
-		@response = HTTParty.get(@base.to_s)
-		@data = @response["data"]
+		@response = HTTParty.get(@base.to_s), {format: :json}
+
+		response['data'].push(response['data'])
+
+		
+
+
+		@pagination = @data['additional_data']['pagination']
+		@more_items = @pagination['more_items_in_collection']
+		#puts @more_items
+		@start = @pagination['next_start']
+		#puts @start
           end
 
+	return @response
 	end
 
 end

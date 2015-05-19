@@ -35,10 +35,9 @@ module PipedrivePUT
 
 		response['data'].push(response['data'])
 
-		
 
 
-		@pagination = @data['additional_data']['pagination']
+		@pagination = @response['additional_data']['pagination']
 		@more_items = @pagination['more_items_in_collection']
 		#puts @more_items
 		@start = @pagination['next_start']

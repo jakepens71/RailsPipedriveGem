@@ -31,7 +31,7 @@ module PipedrivePUT
 		#puts @more_items
 		@base = 'https://api.pipedrive.com/v1/organizations?start=' + @start.to_s + '&limit=500&api_token=' + @key.to_s
 		#puts @base
-		@content = open(@base.to_s) 
+		@content = open(@base.to_s).read
 		@parsed = JSON.parse(@content)
 		
 		@table.merge!(@parsed)

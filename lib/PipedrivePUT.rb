@@ -24,26 +24,27 @@ module PipedrivePUT
 	  
 	  @start = 0
           
-	  @table = Hash.new
+	  table = Array.new
 	  @more_items = true
 
 	  while @more_items == true do
-		#puts @more_items
+		puts @more_items
 		@base = 'https://api.pipedrive.com/v1/organizations?start=' + @start.to_s + '&limit=500&api_token=' + @key.to_s
-		#puts @base
+		puts @base
 		@content = open(@base.to_s).read
 		@parsed = JSON.parse(@content)
+		@data = @parsed["data"]
 		
-		@table.merge!(@parsed)
+		table.push(@data)
 
 		@pagination = @parsed['additional_data']['pagination']
 		@more_items = @pagination['more_items_in_collection']
-		#puts @more_items
+		puts @more_items
 		@start = @pagination['next_start']
-		#puts @start
+		puts @start
           end
 
-	return @table
+	return table
 	end
 
 end

@@ -1,7 +1,7 @@
 require "PipedrivePUT/version"
 
 require 'json'
-require 'httparty'
+require 'open-uri'
 
 module PipedrivePUT
   
@@ -15,7 +15,7 @@ module PipedrivePUT
 
 	def self.getDeal(id)
 	  @base = 'https://api.pipedrive.com/v1/deals/' + id.to_s + '?api_token=' + @key.to_s
-	  @response = HTTParty.get(@base.to_s)
+	  @content = open(@base.to_s)
 	  JSON.parse(@response)
 	end
 
@@ -24,25 +24,26 @@ module PipedrivePUT
 	  
 	  @start = 0
           
-	@table = Hash.new
+	  @table = Hash.new
 	  @more_items = true
 
 	  while @more_items == true do
 		#puts @more_items
 		@base = 'https://api.pipedrive.com/v1/organizations?start=' + @start.to_s + '&limit=500&api_token=' + @key.to_s
 		#puts @base
-		@response = HTTParty.get(@base.to_s), {format: :json}
+		@content = open(@base.to_s) 
+		@parsed = JSON.parse(@content)
+		
+		@table.merge!(@parsed)
 
-
-
-		@pagination = @response['additional_data']['pagination']
+		@pagination = @parsed['additional_data']['pagination']
 		@more_items = @pagination['more_items_in_collection']
 		#puts @more_items
 		@start = @pagination['next_start']
 		#puts @start
           end
 
-	return @response
+	return @table
 	end
 
 end

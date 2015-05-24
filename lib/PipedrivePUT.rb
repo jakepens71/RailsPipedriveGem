@@ -4,22 +4,26 @@ require 'json'
 require 'open-uri'
 
 module PipedrivePUT
-  
+  	#set the giving API key for pipedrive
 	def self.key(key)
 	   @key = key	  
 	end
-
+	
+	#See which key is givin
 	def self.getKey
 	  return @key
 	end
 
+
+	#Return data of a specific deal
 	def self.getDeal(id)
 	  @base = 'https://api.pipedrive.com/v1/deals/' + id.to_s + '?api_token=' + @key.to_s
-	  @content = open(@base.to_s)
-	  JSON.parse(@response)
+	  @content = open(@base.to_s).read
+	  @parsed = JSON.parse(@content)
+	  return @parsed
 	end
 
-
+	#Get All Organizations from Pipedrive
        def self.getAllOrgs()
 	  
 	  @start = 0
@@ -45,6 +49,11 @@ module PipedrivePUT
           end
 
 	return table
+	end
+
+	#Add an organization
+	def self.addOrganization(name, *args)
+		puts *args
 	end
 
 end

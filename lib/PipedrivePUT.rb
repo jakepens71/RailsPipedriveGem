@@ -21,7 +21,7 @@ module PipedrivePUT
 	  @base = 'https://api.pipedrive.com/v1/deals/' + id.to_s + '?api_token=' + @key.to_s
 	  @content = open(@base.to_s).read
 	  @parsed = JSON.parse(@content)
-	  return @parsed
+	  #return @parsed
 	end
 
 	#Get All Organizations from Pipedrive
@@ -33,9 +33,9 @@ module PipedrivePUT
 	  @more_items = true
 
 	  while @more_items == true do
-		puts @more_items
+		#puts @more_items
 		@base = 'https://api.pipedrive.com/v1/organizations?start=' + @start.to_s + '&limit=500&api_token=' + @key.to_s
-		puts @base
+		#puts @base
 		@content = open(@base.to_s).read
 		@parsed = JSON.parse(@content)
 		@data = @parsed["data"]
@@ -44,12 +44,12 @@ module PipedrivePUT
 
 		@pagination = @parsed['additional_data']['pagination']
 		@more_items = @pagination['more_items_in_collection']
-		puts @more_items
+		#puts @more_items
 		@start = @pagination['next_start']
-		puts @start
+		#puts @start
           end
 
-	return table
+	#return table
 	end
 
 	#Add an organization
@@ -66,6 +66,16 @@ module PipedrivePUT
 
 		RestClient.post @base.to_s, { "name" => name }.to_json, :content_type => :json, :accept => :json
 	
+	end
+
+	def getAllUsers
+		@base = 'api.pipedrive.com/v1/users?api_token=' + @key.to_s
+
+		@content = open(@base.to_s).read
+		@parsed = JSON.parse(@content)
+
+		
+
 	end
 
 end

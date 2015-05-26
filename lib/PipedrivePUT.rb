@@ -2,6 +2,7 @@ require "PipedrivePUT/version"
 
 require 'json'
 require 'open-uri'
+require 'rest-client'
 
 module PipedrivePUT
   	#set the giving API key for pipedrive
@@ -53,7 +54,18 @@ module PipedrivePUT
 
 	#Add an organization
 	def self.addOrganization(name, *args)
-		puts *args
+		args.each_with_index{ |arg, i| puts "#{i+1}. #{arg}" } 
+
+		if (args.size > 3)
+			raise "Only takes four Params (<Organization Name>, <Owner ID>, <Visible_to> (1-Owner & followers(private) 3-Entire Company)"
+		end
+
+		@base = 'https://api.pipedrive.com/v1/organizations?api_token=' + @key.to_s
+
+		
+
+		#RestClient.post @base.to_s, { "name" => "Jacob Programming Test" }.to_json, :content_type => :json, :accept => :json
+	
 	end
 
 end

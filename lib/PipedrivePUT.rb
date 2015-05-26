@@ -56,15 +56,15 @@ module PipedrivePUT
 	def self.addOrganization(name, *args)
 		args.each_with_index{ |arg, i| puts "#{i+1}. #{arg}" } 
 
-		if (args.size > 3)
-			raise "Only takes four Params (<Organization Name>, <Owner ID>, <Visible_to> (1-Owner & followers(private) 3-Entire Company)"
+		if (args.size > 1)
+			raise "Only takes one additional Params (<Organization Name>, <Owner ID>)"
 		end
 
 		@base = 'https://api.pipedrive.com/v1/organizations?api_token=' + @key.to_s
 
-		
+		puts args[1]
 
-		#RestClient.post @base.to_s, { "name" => "Jacob Programming Test" }.to_json, :content_type => :json, :accept => :json
+		RestClient.post @base.to_s, { "name" => name }.to_json, :content_type => :json, :accept => :json
 	
 	end
 

@@ -27,33 +27,49 @@ Or install it yourself as:
 Get all organizations from your account at Pipedrive
 
 ```ruby
-  PipedrivePUT.getAllOrgs
+  PipedrivePUT::Organizations.getAllOrgs
 ```
 
 Add an organization
 
 ```ruby
-  PipedrivePUT.addOrganization(< Name of new Organization >)
+  PipedrivePUT::Organizations.addOrganization(< Name of new Organization >)
 ```
 
-##Search
+## Deals
+
+Get Specific Deal with ID
+
+```ruby
+  PipedrivePUT::Deals.getDeal(<id>)
+```
+
+## Search
 
 Search entire Pipedrive (Deals, Organizations, Product, File, Person)
 
 ```ruby
-  PipedrivePUT.search(< Term >)
+  PipedrivePUT::Search.search(< Term >)
 ```
 
 Search Specific Item type in Pipedrive (Deals, Organizations, Product, File, Person)
 
 ```ruby
-  PipedrivePUT.search(< Term >, < item_type>)
+  PipedrivePUT::Search.search(< Term >, < item_type>)
 ```
 
 Example:
 
 ```ruby
-  PipedrivePUT.search("UPMC", "organization")
+  PipedrivePUT::Search.search("UPMC", "organization")
+```
+
+## Users
+
+Get All users for your company
+
+```ruby
+  PipedrivePUT::Users.getAllUsers
 ```
 
 Data is returned in JSON format.
@@ -68,7 +84,11 @@ This is my first attempt at a ruby gem so I appoligize if things are unorthodox.
 
 2. Add support for additional arguments to create an organization
 
-3. Deals
+3. Get All Deals
+
+4. Add a deal
+
+5. Many other Pipedrive API Calls
 
 
 ## Contributing

@@ -1,3 +1,3 @@
 module PipedrivePUT
-  VERSION = "0.0.2"
+  VERSION = "0.0.7"
 end

@@ -26,11 +26,15 @@ Or install it yourself as:
 
 Get All Organizations from your account at Pipedrive
 
+'''
   PipedrivePUT.getAllOrgs
+'''
 
 Add an Organization
 
+'''
   PipedrivePUT.addOrganization(< Name of new Organization >)
+'''
 
 Data is returned in JSON format.
 

@@ -17,14 +17,17 @@ include PipedrivePUT
 			  @more_items = true
 
 			  while @more_items == true do
+				count = 0
 				#puts @more_items
 				@base = 'https://api.pipedrive.com/v1/organizations?start=' + @start.to_s + '&limit=500&api_token=' + @@key.to_s
 				#puts @base
 				@content = open(@base.to_s).read
 				@parsed = JSON.parse(@content)
-				@data = @parsed["data"]
-		
-				table.push(@data)
+
+				while count < @parsed["data"].size
+					table.push(@parsed["data"][count])
+					count = count +1
+				end
 
 				@pagination = @parsed['additional_data']['pagination']
 				@more_items = @pagination['more_items_in_collection']

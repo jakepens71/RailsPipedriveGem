@@ -30,18 +30,21 @@ module PipedrivePUT
 			  @item_type = args[0].downcase 
 
 			  while @more_items == true do
+				count = 0
 				@base = 'https://api.pipedrive.com/v1/searchResults?term=' + term.to_s + '&item_type=' + @item_type.to_s + '&' + @start.to_s + '&limit=500&api_token=' + @@key.to_s
 
-				puts @base
+				#puts @base
 
 				@content = open(@base.to_s).read
 
-				puts @content		
+				#puts @content		
 
 				@parsed = JSON.parse(@content)
-				@data = @parsed["data"]
 
-				table.push(@data)
+				while count < @parsed["data"].size
+					table.push(@parsed["data"][count])
+					count = count +1
+				end
 
 				@pagination = @parsed['additional_data']['pagination']
 				@more_items = @pagination['more_items_in_collection']
@@ -59,7 +62,7 @@ module PipedrivePUT
 
 			  while @more_items == true do
 				@base = 'https://api.pipedrive.com/v1/searchResults?term=' + term.to_s + '&' + @start.to_s + '&limit=500&api_token=' + @@key.to_s
-
+				count = 0
 				puts @base
 
 				@content = open(@base.to_s).read
@@ -67,9 +70,11 @@ module PipedrivePUT
 				puts @content		
 
 				@parsed = JSON.parse(@content)
-				@data = @parsed["data"]
 
-				table.push(@data)
+				while count < @parsed["data"].size
+					table.push(@parsed["data"][count])
+					count = count +1
+				end
 
 				@pagination = @parsed['additional_data']['pagination']
 				@more_items = @pagination['more_items_in_collection']

@@ -24,16 +24,36 @@ Or install it yourself as:
 
 ## Organizations
 
-Get All Organizations from your account at Pipedrive
+Get all organizations from your account at Pipedrive
 
 ```ruby
   PipedrivePUT.getAllOrgs
 ```
 
-Add an Organization
+Add an organization
 
-```
+```ruby
   PipedrivePUT.addOrganization(< Name of new Organization >)
+```
+
+##Search
+
+Search entire Pipedrive (Deals, Organizations, Product, File, Person)
+
+```ruby
+  PipedrivePUT.search(< Term >)
+```
+
+Search Specific Item type in Pipedrive (Deals, Organizations, Product, File, Person)
+
+```ruby
+  PipedrivePUT.search(< Term >, < item_type>)
+```
+
+Example:
+
+```ruby
+  PipedrivePUT.search("UPMC", "organization")
 ```
 
 Data is returned in JSON format.
@@ -44,7 +64,7 @@ This is my first attempt at a ruby gem so I appoligize if things are unorthodox.
 
 ## To do List
 
-1.Add Search for fields in Pipedrive with optional arguments
+1. Add search for specific organization id
 
 2. Add support for additional arguments to create an organization
 

@@ -53,6 +53,7 @@ module PipedrivePUT
 	end
 
 	#Add an organization
+	#TO DO: Add optional *args full functionality
 	def self.addOrganization(name, *args)
 		args.each_with_index{ |arg, i| puts "#{i+1}. #{arg}" } 
 
@@ -62,8 +63,7 @@ module PipedrivePUT
 
 		@base = 'https://api.pipedrive.com/v1/organizations?api_token=' + @key.to_s
 
-		puts args[1]
-
+		
 		RestClient.post @base.to_s, { "name" => name }.to_json, :content_type => :json, :accept => :json
 	
 	end
@@ -75,6 +75,10 @@ module PipedrivePUT
 
 		@content = open(@base.to_s).read
 		@parsed = JSON.parse(@content)
+	end
+
+	#Search Pipedrive
+	def search(term, *args)
 
 	end
 

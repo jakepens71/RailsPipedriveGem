@@ -20,7 +20,32 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+   PipedrivePUT.key(< API Token Here >)
+
+## Organizations
+
+Get All Organizations from your account at Pipedrive
+
+  PipedrivePUT.getAllOrgs
+
+Add an Organization
+
+  PipedrivePUT.addOrganization(< Name of new Organization >)
+
+Data is returned in JSON format.
+
+This can be easily customized. I needed something quickly and easily for my own personal project.
+
+This is my first attempt at a ruby gem so I appoligize if things are unorthodox.
+
+## To do List
+
+1.Add Search for fields in Pipedrive with optional arguments
+
+2. Add support for additional arguments to create an organization
+
+3. Deals
+
 
 ## Contributing
 

@@ -6,7 +6,7 @@ require 'PipedrivePUT/version'
 Gem::Specification.new do |spec|
   spec.name          = "PipedrivePUT"
   spec.version       = PipedrivePUT::VERSION
-  spec.authors       = ["Jacob Shay"]
+  spec.authors       = ["Jakepens71"]
   spec.email         = ["jake_ps@comcast.net"]
   spec.summary       = 'Pipedrive gem that i needed'
   spec.description   = 'Pipedrive gem that i needed'

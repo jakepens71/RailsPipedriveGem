@@ -7,7 +7,7 @@ module PipedrivePUT
 			  @base = 'https://api.pipedrive.com/v1/deals/' + id.to_s + '?api_token=' + @@key.to_s
 			  @content = open(@base.to_s).read
 			  @parsed = JSON.parse(@content)
-			  #return @parsed
+			  return @parsed
 			end
 
 

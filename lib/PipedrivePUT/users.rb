@@ -9,6 +9,7 @@ module PipedrivePUT
 
 				@content = open(@base.to_s).read
 				@parsed = JSON.parse(@content)
+				return @parsed
 			end
 
 

@@ -49,6 +49,7 @@ module PipedrivePUT
 				@start = @pagination['next_start']
 				#puts @start
 			end 
+			return table
 		 
 		 else
 
@@ -76,7 +77,7 @@ module PipedrivePUT
 				@start = @pagination['next_start']
 				#puts @start
 			end 
-	
+			return table
 		end
 	      end
 

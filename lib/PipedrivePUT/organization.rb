@@ -33,7 +33,7 @@ include PipedrivePUT
 				#puts @start
 			  end
 
-			#return table
+			return table
 			end
 
 

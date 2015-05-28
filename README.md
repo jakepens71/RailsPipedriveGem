@@ -32,7 +32,7 @@ Get all organizations from your account at Pipedrive
 
 Get Organization by ID
 ```ruby
-  PipedrivePUT::Organizations.getOrganization(<id>)
+  PipedrivePUT::Organizations.getOrganization(< id >)
 ```
 
 
@@ -40,6 +40,12 @@ Add an organization
 
 ```ruby
   PipedrivePUT::Organizations.addOrganization(< Name of new Organization >)
+```
+
+Find Organization by term
+
+```ruby
+  PipedrivePUT::Organizations.findOrganizationByName(< Term >)
 ```
 
 ## Deals

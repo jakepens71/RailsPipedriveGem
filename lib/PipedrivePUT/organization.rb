@@ -60,10 +60,42 @@ include PipedrivePUT
 
 			#Return data of a specific Organization
 			def self.getOrganization(id)
-			  @base = 'https://api.pipedrive.com/v1/organizations/' + id.to_s + '?api_token=' + @@key.to_s
-			  @content = open(@base.to_s).read
-			  @parsed = JSON.parse(@content)
-			  return @parsed
+				@base = 'https://api.pipedrive.com/v1/organizations/' + id.to_s + '?api_token=' + @@key.to_s
+				@content = open(@base.to_s).read
+				@parsed = JSON.parse(@content)
+				return @parsed
+			end
+
+			#Find Organization by name
+			def self.findOrganizationByName(name)
+				@start = 0
+			  
+				table = Array.new
+				@more_items = true
+				tablesize = 0
+
+				while @more_items == true do
+					count = 0
+
+					@base = 'https://api.pipedrive.com/v1/organizations/find?term=' + name.to_s + '&start=' + @start.to_s + '&limit=500&api_token=' + @@key.to_s
+										
+					@content = open(@base.to_s).read
+					@parsed = JSON.parse(@content)	
+				
+						while count < @parsed["data"].size
+							#table.push(@parsed["data"][count])
+							table[tablesize] = @parsed["data"][count]
+							count = count +1
+							tablesize = tablesize + 1
+					
+						end	
+					@pagination = @parsed['additional_data']['pagination']
+					@more_items = @pagination['more_items_in_collection']
+					#puts @more_items
+					@start = @pagination['next_start']
+					#puts @start
+			  	end
+				return table
 			end
 			
 

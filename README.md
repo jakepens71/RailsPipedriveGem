@@ -30,6 +30,12 @@ Get all organizations from your account at Pipedrive
   PipedrivePUT::Organizations.getAllOrgs
 ```
 
+Get Organization by ID
+```ruby
+  PipedrivePUT::Organizations.getOrganization(<id>)
+```
+
+
 Add an organization
 
 ```ruby
@@ -80,15 +86,14 @@ This is my first attempt at a ruby gem so I appoligize if things are unorthodox.
 
 ## To do List
 
-1. Add search for specific organization id
 
-2. Add support for additional arguments to create an organization
+1. Add support for additional arguments to create an organization
 
-3. Get All Deals
+2. Get All Deals
 
-4. Add a deal
+3. Add a deal
 
-5. Many other Pipedrive API Calls
+4. Many other Pipedrive API Calls
 
 
 ## Contributing

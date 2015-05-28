@@ -58,6 +58,15 @@ include PipedrivePUT
 	
 			end
 
+			#Return data of a specific Organization
+			def self.getOrganization(id)
+			  @base = 'https://api.pipedrive.com/v1/organizations/' + id.to_s + '?api_token=' + @@key.to_s
+			  @content = open(@base.to_s).read
+			  @parsed = JSON.parse(@content)
+			  return @parsed
+			end
+			
+
 
    end
 end

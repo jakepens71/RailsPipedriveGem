@@ -53,7 +53,13 @@ Find Organization by term
 Get Specific Deal with ID
 
 ```ruby
-  PipedrivePUT::Deals.getDeal(<id>)
+  PipedrivePUT::Deal.getDeal(<id>)
+```
+
+Get All Deals
+
+```ruby
+PipedrivePUT::Deal.getAllDeals
 ```
 
 ## Search

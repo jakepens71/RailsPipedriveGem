@@ -3,6 +3,8 @@ require "PipedrivePUT/organization"
 require 'PipedrivePUT/search'
 require 'PipedrivePUT/users'
 require 'PipedrivePUT/deal'
+require 'PipedrivePUT/persons'
+require 'PipedrivePUT/pipelines'
 
 require 'json'
 require 'open-uri'

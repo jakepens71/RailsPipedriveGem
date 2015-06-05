@@ -90,6 +90,32 @@ Get All users for your company
   PipedrivePUT::Users.getAllUsers
 ```
 
+## Persons
+
+Get all persons from Pipedrive
+```ruby
+  PipedrivePUT::Persons.getAllPersons
+```
+
+Get specifi Person from Pipedrive
+
+```ruby
+  PipedrivePUT::Persons.detailsOfPerson(< id >)
+```
+
+## Pipelines
+
+Get all Pipelines
+```ruby
+  PipedrivePUT::Pipelines.getAllPipelines
+```
+
+Get one Pipeline
+```ruby
+  PipedrivePUT::Pipelines.getOnePipeline(< id >)
+```
+
+
 Data is returned in JSON format.
 
 This can be easily customized. I needed something quickly and easily for my own personal project.

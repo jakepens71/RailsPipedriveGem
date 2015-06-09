@@ -48,6 +48,12 @@ Find Organization by term
   PipedrivePUT::Organizations.findOrganizationByName(< Term >)
 ```
 
+Find Persons in an Organization
+```ruby
+  PipedrivePUT::Organizations.getPersonsOfOrganization(< id >)
+```
+
+
 ## Deals
 
 Get Specific Deal with ID

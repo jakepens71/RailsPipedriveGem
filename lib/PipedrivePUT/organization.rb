@@ -113,20 +113,25 @@ include PipedrivePUT
 					@base = 'https://api.pipedrive.com/v1/organizations/' + id.to_s + '/persons?&start=' + @start.to_s + '&limit=500&api_token=' + @@key.to_s
 										
 					@content = open(@base.to_s).read
-					@parsed = JSON.parse(@content)	
+					@parsed = JSON.parse(@content)
+
+					if @parsed["data"].nil?
+						return "Organization does not have any Person associated with it"
+					else
 				
-						while count < @parsed["data"].size
-							#table.push(@parsed["data"][count])
-							table[tablesize] = @parsed["data"][count]
-							count = count +1
-							tablesize = tablesize + 1
+							while count < @parsed["data"].size
+								#table.push(@parsed["data"][count])
+								table[tablesize] = @parsed["data"][count]
+								count = count +1
+								tablesize = tablesize + 1
 					
-						end	
-					@pagination = @parsed['additional_data']['pagination']
-					@more_items = @pagination['more_items_in_collection']
-					#puts @more_items
-					@start = @pagination['next_start']
-					#puts @start
+							end	
+						@pagination = @parsed['additional_data']['pagination']
+						@more_items = @pagination['more_items_in_collection']
+						#puts @more_items
+						@start = @pagination['next_start']
+						#puts @start
+					end
 			  	end
 				return table
 			end

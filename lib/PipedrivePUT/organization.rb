@@ -3,7 +3,7 @@ module PipedrivePUT
 
 include PipedrivePUT
 
-
+require 'rest-client'
 			def self.key
 			 puts @@key
 			end
@@ -43,18 +43,21 @@ include PipedrivePUT
 
 
 			#Add an organization
-			#TO DO: Add optional *args full functionality
-			def self.addOrganization(name, *args)
-				args.each_with_index{ |arg, i| puts "#{i+1}. #{arg}" } 
+			def self.addOrganization(companyName, options = {})
+				#args.each_with_index{ |arg, i| puts "#{i+1}. #{arg}" } 
 
-				if (args.size > 1)
-					raise "Only takes one additional Params (<Organization Name>, <Owner ID>)"
+				uri = URI.parse('https://api.pipedrive.com/v1/organizations?api_token=' + @@key.to_s)
+
+				if (!options.nil?)
+
+					options.merge!(:name => companyName)
+
+					puts options
+
+					response = Net::HTTP.post_form(uri, options)
 				end
 
-				@base = 'https://api.pipedrive.com/v1/organizations?api_token=' + @@key.to_s
-
 		
-				RestClient.post @base.to_s, { "name" => name }.to_json, :content_type => :json, :accept => :json
 	
 			end
 

@@ -154,13 +154,9 @@ This is my first attempt at a ruby gem so I appoligize if things are unorthodox.
 ## To do List
 
 
-1. Add support for additional arguments to create an organization
+1. Add support for additional arguments when creating a deal
 
-2. Get All Deals
-
-3. Add a deal
-
-4. Many other Pipedrive API Calls
+2. Many other Pipedrive API Calls
 
 
 ## Contributing

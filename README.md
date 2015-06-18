@@ -62,7 +62,7 @@ You can aso add ANY custom key from Pipedrive to this to input values into those
 Example:
 
 ```ruby
-  PipedrivePUT::Organizations.addOrganization("Jacob Programming Test", :'3df8474115f948137b3f98a0ff651d0edbbd2f54' => "JMD")
+  PipedrivePUT::Organizations.addOrganization("Jacob Programming Test", :'3df8474115f948137b3f98a0ff651d0edbbd2f54' => "JMD", :address => "South Jasmine Street")
 ```
 
 Find Organization by term

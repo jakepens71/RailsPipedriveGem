@@ -151,6 +151,9 @@ This can be easily customized. I needed something quickly and easily for my own 
 
 This is my first attempt at a ruby gem so I appoligize if things are unorthodox.
 
+The Pipedrive API can be found at:
+https://developers.pipedrive.com/v1
+
 ## To do List
 
 

@@ -42,11 +42,11 @@ Add an organization
   PipedrivePUT::Organizations.addOrganization(< Name of new Organization >)
 ```
 
-You can also add various other paramters based on values in pipedrive or custom keys when creating a organization!
+You can also add various other parameters based on values in Pipedrive or custom keys when creating a organization!
 
 
 ```ruby
-  PipedrivePUT::Organizations.addOrganization(< Name of new Organization >, < :optionArgument => "value" )
+  PipedrivePUT::Organizations.addOrganization(< Name of new Organization >, < :optionArgument => "value" > )
 ```
 
 NOTE: the options must be in hash format
@@ -57,7 +57,7 @@ Example:
   PipedrivePUT::Organizations.addOrganization("Jacob Programming Test", :address => "South Jasmine Street")
 ```
 
-You can aso add ANY cust key to this to input values into those fields
+You can aso add ANY custom key from Pipedrive to this to input values into those fields
 
 Example:
 

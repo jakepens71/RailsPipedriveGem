@@ -18,7 +18,6 @@ require 'rest-client'
 				else
 					@time = time.utc
 					@formattedTime = @time.strftime("%F %T")
-					@formattedTime = @formattedTime.utc
 					#puts @formattedTime
 						@start = 0
 					  

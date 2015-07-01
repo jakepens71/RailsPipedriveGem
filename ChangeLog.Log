@@ -1,3 +1,0 @@
-July 1st, 2015 8:24 AM
-	Added Recents class, added ability to search recent changes in Pipedrive by the getRecent method. 
-		Needs defined time in string as 'YYYY-MM-DD HH:MM:SS' format. This searches for every item in Pipedrive.

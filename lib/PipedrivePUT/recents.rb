@@ -16,8 +16,10 @@ require 'rest-client'
 				if time.nil?
 					raise "No time entered. Correct format is YYYY-MM-DD HH:MM:SS"
 				else
-					@formattedTime = time.strftime("%F %T")
-					puts @formattedTime
+					@time = time.utc
+					@formattedTime = @time.strftime("%F %T")
+					@formattedTime = @formattedTime.utc
+					#puts @formattedTime
 						@start = 0
 					  
 					  	table = Array.new

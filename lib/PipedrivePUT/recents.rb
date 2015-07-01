@@ -27,9 +27,9 @@ require 'rest-client'
 
 						while @more_items == true do
 							count = 0
-							puts @more_items
+							#puts @more_items
 							@base = 'https://api.pipedrive.com/v1/recents?since_timestamp=' + @formattedTime.to_s + '&' + 'start=' + @start.to_s + '&limit=500&api_token=' + @@key.to_s
-							puts @base
+							#puts @base
 							@content = open(@base.to_s).read
 							@parsed = JSON.parse(@content)
 
@@ -42,9 +42,9 @@ require 'rest-client'
 
 							@pagination = @parsed['additional_data']['pagination']
 							@more_items = @pagination['more_items_in_collection']
-							puts @more_items
+							#puts @more_items
 							@start = @pagination['next_start']
-							puts @start
+							#puts @start
 						 end
 
 					return table

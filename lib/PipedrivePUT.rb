@@ -5,6 +5,7 @@ require 'PipedrivePUT/users'
 require 'PipedrivePUT/deal'
 require 'PipedrivePUT/persons'
 require 'PipedrivePUT/pipelines'
+require 'PipedrivePUT/recents'
 
 require 'json'
 require 'open-uri'

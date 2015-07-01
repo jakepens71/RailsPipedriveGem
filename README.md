@@ -144,6 +144,17 @@ Get one Pipeline
   PipedrivePUT::Pipelines.getOnePipeline(< id >)
 ```
 
+## Recents
+
+Get all Recent changes from Pipedrive based on a specific time
+```ruby
+  PipedrivePUT::Recents.getRecent(< Time.now >)
+```
+
+NOTE: This searches for everything in Pipedrive (deal, organization, user, state, product, etc.) 
+
+I hope to add additional support to break this down at a later time.
+
 
 Data is returned in JSON format.
 
@@ -159,7 +170,9 @@ https://developers.pipedrive.com/v1
 
 1. Add support for additional arguments when creating a deal
 
-2. Many other Pipedrive API Calls
+2. Add ability to search for recent changes by specific types onle (deal, organization, user, state, etc.)
+
+3. Many other Pipedrive API Calls
 
 
 ## Contributing

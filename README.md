@@ -102,7 +102,7 @@ Search entire Pipedrive (Deals, Organizations, Product, File, Person)
 Search Specific Item type in Pipedrive (Deals, Organizations, Product, File, Person)
 
 ```ruby
-  PipedrivePUT::Search.search(< Term >, < item_type>)
+  PipedrivePUT::Search.search(< Term >, < item_type >)
 ```
 
 Example:
@@ -131,6 +131,21 @@ Get specifi Person from Pipedrive
 ```ruby
   PipedrivePUT::Persons.detailsOfPerson(< id >)
 ```
+
+Add a person to Pipedrive
+
+```ruby
+  PipedrivePUT::Persons.addPerson(< Name of Person >, < additional params >)
+```s
+
+Example:
+
+```ruby
+  PipedrivePUT::Persons.addPerson("Programming Test Person", {:org_id => 15367, :phone => [{:value=>'555-555-3340',:label=>'work'},{:value=>'555-111-1111',:label=>'home'}]})
+```s
+
+NOTE: The option arguments do not be put in as strings. As of right now that is not working in irb console. I will attempt to see if that plays a factor in rails its self.
+
 
 ## Pipelines
 

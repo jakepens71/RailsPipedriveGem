@@ -2,6 +2,8 @@ module PipedrivePUT
 	class Persons
 		include PipedrivePUT
 
+		require 'httparty'
+
 		#Gets all persons in pipedrive
 		def self.getAllPersons
 			@start = 0
@@ -45,6 +47,38 @@ module PipedrivePUT
 		end
 
 
+		#Add an Person
+			def self.addPerson(name, options = {})
+				#args.each_with_index{ |arg, i| puts "#{i+1}. #{arg}" } 
+
+				uri = URI.parse('https://api.pipedrive.com/v1/persons?api_token=' + @@key.to_s)
+
+				if (!options.nil?)
+
+					options.merge!(:name => name)
+
+					puts options
+
+					response = Net::HTTP.post_form(uri, options)
+				end
+			end
+
+
+		#Add an Person
+			def self.addPerson(name, options = {})
+				#args.each_with_index{ |arg, i| puts "#{i+1}. #{arg}" } 
+
+				@url = 'https://api.pipedrive.com/v1/persons?api_token=' + @@key.to_s
+
+				if (!options.nil?)
+
+					options.merge!(:name => name)
+
+					puts options
+
+					response = HTTParty.post(@url.to_s, :body => options.to_json, :headers => {'Content-type' => 'application/json'})
+				end
+			end
 
 	end
 

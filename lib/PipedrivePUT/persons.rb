@@ -2,8 +2,6 @@ module PipedrivePUT
 	class Persons
 		include PipedrivePUT
 
-		require 'httparty'
-
 		#Gets all persons in pipedrive
 		def self.getAllPersons
 			@start = 0

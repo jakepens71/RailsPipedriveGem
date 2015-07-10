@@ -1,4 +1,7 @@
 module PipedrivePUT
+
+require 'httparty'
+
 	class Persons
 		include PipedrivePUT
 

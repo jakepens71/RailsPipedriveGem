@@ -10,6 +10,7 @@ require 'PipedrivePUT/recents'
 require 'json'
 require 'open-uri'
 require 'rest-client'
+require 'httparty'
 
 
 module PipedrivePUT

@@ -10,6 +10,12 @@ Add this line to your application's Gemfile:
 gem 'PipedrivePUT'
 ```
 
+#Needed for some http commands.
+
+```ruby
+gem 'httparty'
+```
+
 And then execute:
 
     $ bundle

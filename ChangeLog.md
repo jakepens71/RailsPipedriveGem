@@ -1,3 +1,8 @@
+# (1.1.14) July 9th, 2015 07:47 AM
+	* Added ability to insert a person to Pipedrive (PipedrivePUT::Persons.addPerson(<name>, < additional info >)
+
+	* Added HTTParty back to dependencies. Used in Persons.addPerson (overall easier to add this with nested hashes)
+
 # (1.1.13) July 1st, 2015 9:31 AM
 	* Recent method needs Time format
 

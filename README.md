@@ -172,6 +172,14 @@ Get all Recent changes from Pipedrive based on a specific time
   PipedrivePUT::Recents.getRecent(< Time.now >)
 ```
 
+## Organization Fields
+
+Get all fields that are able to be used in an organization
+```ruby
+  PipedrivePUT::OrganizationFields.getAllOrganizationFields()
+```
+
+
 NOTE: This searches for everything in Pipedrive (deal, organization, user, state, product, etc.) 
 
 I hope to add additional support to break this down at a later time.

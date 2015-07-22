@@ -139,5 +139,26 @@ require 'rest-client'
 				return table
 			end
 
+			#Update an Organization
+			def self.updateOrganization(id, options = {})
+				@url = 'https://api.pipedrive.com/v1/organizations/' + id.to_s + '?api_token=' + @@key.to_s
+
+				puts @url
+				
+				if (!options.nil?)
+					
+					options.merge!(:id => id)
+					puts options
+
+					puts '----------------------'
+					
+					response = HTTParty.put(@url.to_s, :body => options.to_json, :headers => {'Content-type' => 'application/json'})
+					puts '----------------------'
+					puts response				
+	
+				end
+
+			end
+
    end
 end

@@ -3,7 +3,7 @@ module PipedrivePUT
 
 include PipedrivePUT
 
-		def self.getAllOrganizationFields()
+		def self.getAllOrganizationFields
 			  
 			  @start = 0
 			  

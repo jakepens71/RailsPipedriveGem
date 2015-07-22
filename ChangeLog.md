@@ -1,3 +1,7 @@
+# (1.1.16) July 22nd, 2015 11:57 AM
+	* Fixed type in organization Fields
+	* added support to update an organization
+
 # (1.1.15) July 13th, 2015 11:37 AM
 	* Added the ability to retrieve all fields that can be used in an Organization by using the OrganizationFields class
 

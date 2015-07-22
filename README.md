@@ -82,6 +82,14 @@ Find Persons in an Organization
   PipedrivePUT::Organizations.getPersonsOfOrganization(< id >)
 ```
 
+Update an organization
+```ruby
+  PipedrivePUT::Organizations.updateOrganization(< id >, < optional params >)
+```
+Example
+```ruby
+  PipedrivePUT::Organizations.updateOrganization(1, :name => "New Organization Name")
+```
 
 ## Deals
 
@@ -176,7 +184,7 @@ Get all Recent changes from Pipedrive based on a specific time
 
 Get all fields that are able to be used in an organization
 ```ruby
-  PipedrivePUT::OrganizationFields.getAllOrganizationFields()
+  PipedrivePUT::OrganizationFields.getAllOrganizationFields
 ```
 
 

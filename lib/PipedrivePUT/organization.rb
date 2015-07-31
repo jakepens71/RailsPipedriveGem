@@ -56,9 +56,6 @@ require 'rest-client'
 
 					response = Net::HTTP.post_form(uri, options)
 				end
-
-		
-	
 			end
 
 			#Return data of a specific Organization
@@ -143,18 +140,18 @@ require 'rest-client'
 			def self.updateOrganization(id, options = {})
 				@url = 'https://api.pipedrive.com/v1/organizations/' + id.to_s + '?api_token=' + @@key.to_s
 
-				puts @url
+				#puts @url
 				
 				if (!options.nil?)
 					
 					options.merge!(:id => id)
-					puts options
+					#puts options
 
-					puts '----------------------'
+					#puts '----------------------'
 					
 					response = HTTParty.put(@url.to_s, :body => options.to_json, :headers => {'Content-type' => 'application/json'})
-					puts '----------------------'
-					puts response				
+					#puts '----------------------'
+					#puts response				
 	
 				end
 

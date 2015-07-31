@@ -26,7 +26,9 @@ Or install it yourself as:
 
 ## Usage
 
+```ruby
    PipedrivePUT.key(< API Token Here >)
+```
 
 ## Organizations
 
@@ -159,6 +161,12 @@ Example:
 ```
 
 NOTE: The option arguments do not be put in as strings. As of right now that is not working in irb console. I will attempt to see if that plays a factor in rails its self.
+
+Delete a persons from Pipedrive
+
+```ruby
+  PipedrivePUT::Persons.deletePerson(< id >)
+```
 
 
 ## Pipelines

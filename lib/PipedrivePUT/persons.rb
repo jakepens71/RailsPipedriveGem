@@ -63,6 +63,14 @@ require 'httparty'
 				end
 			end
 
+		#Delete a person from Pipedrive
+			def self.deletePerson(id)
+
+				@url = 'https://api.pipedrive.com/v1/persons/' + id.to_s + '?api_token=' + @@key.to_s
+
+				response = HTTParty.delete(@url.to_s)
+			end
+
 	end
 
 end

@@ -168,6 +168,18 @@ Delete a persons from Pipedrive
   PipedrivePUT::Persons.deletePerson(< id >)
 ```
 
+Update a persons from Pipedrive
+
+```ruby
+  PipedrivePUT::Persons.updatePerson(< id >, < additional params >)
+```
+
+Example
+
+```ruby
+  PipedrivePUT::Persons.updatePerson(10, :email => "test@test.com")
+```
+
 
 ## Pipelines
 

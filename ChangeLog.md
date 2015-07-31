@@ -1,3 +1,9 @@
+# (1.1.18) July 31st, 2015 1:56 PM
+	*added ability to update a person from pipedrive
+
+# (1.1.17) July 31st, 2015 11:45 AM
+	* Aded ability to remove a person from pipedrive
+
 # (1.1.16) July 22nd, 2015 11:57 AM
 	* Fixed type in organization Fields
 	* added support to update an organization

@@ -71,6 +71,26 @@ require 'httparty'
 				response = HTTParty.delete(@url.to_s)
 			end
 
+
+		#Update an Organization
+			def self.updatePerson(id, options = {})
+				@url = 'https://api.pipedrive.com/v1/persons/' + id.to_s + '?api_token=' + @@key.to_s
+				
+				if (!options.nil?)
+					
+					options.merge!(:id => id)
+					#puts options
+
+					#puts '----------------------'
+					
+					response = HTTParty.put(@url.to_s, :body => options.to_json, :headers => {'Content-type' => 'application/json'})
+					#puts '----------------------'
+					#puts response				
+	
+				end
+
+			end
+
 	end
 
 end

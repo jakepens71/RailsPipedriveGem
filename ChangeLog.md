@@ -1,3 +1,10 @@
+# (1.1.20) August 6th, 2015 11:48 AM
+	*switched "PipedrivePUT::Search.search" from regular ruby request to use HTTparty.
+		I was having trouble for some very odd reason getting this request to work on a server
+		This should NOT cause any problems with the previous releases. It still returns the same data 
+		just a diffrent request. If ANYONE has any trouble please let me know asap and I will then add
+		the previous method back in.
+
 # (1.1.18) July 31st, 2015 1:56 PM
 	*added ability to update a person from pipedrive
 

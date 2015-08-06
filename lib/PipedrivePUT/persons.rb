@@ -91,6 +91,44 @@ require 'httparty'
 
 			end
 
+		#Search person by name (additional params means organization id)
+			def self.SearchForPerson(term, org_id)
+
+				@start = 0;
+				table = Array.new
+				@more_items = true
+
+				tablesize = 0
+
+				while @more_items == true do
+					count = 0
+
+						@base = 'https://api.pipedrive.com/v1/persons/find?term=' + term.to_s + '&org_id=' + org_id.to_s + '&start=' + @start.to_s + '&limit=500&api_token=' + @@key.to_s
+
+						@content = open(@base.to_s).read
+						@parsed = JSON.parse(@content)
+
+						if @parsed["data"].nil?
+						return "No Persons returned"
+					else
+				
+							while count < @parsed["data"].size
+								#table.push(@parsed["data"][count])
+								table[tablesize] = @parsed["data"][count]
+								count = count +1
+								tablesize = tablesize + 1
+					
+							end	
+						@pagination = @parsed['additional_data']['pagination']
+						@more_items = @pagination['more_items_in_collection']
+						#puts @more_items
+						@start = @pagination['next_start']
+						#puts @start
+					end
+			  	end
+				return table
+			end
+
 	end
 
 end

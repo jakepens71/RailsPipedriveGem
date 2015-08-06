@@ -1,3 +1,7 @@
+# (1.1.22) August 6th, 2015 2:09 PM
+	*HTTParty error caused URI issues (of course!) Sorry reverting back!
+		PipedirvePUT::Search.search() no longer uses HTTParty
+
 # (1.1.21) August 6th, 2015 1:53 PM
 	*Fixed PipedrivePUT::Search.search uri.
 

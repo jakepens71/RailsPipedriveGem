@@ -1,3 +1,6 @@
+# (1.1.21) August 6th, 2015 1:53 PM
+	*Fixed PipedrivePUT::Search.search uri.
+
 # (1.1.20) August 6th, 2015 11:48 AM
 	*switched "PipedrivePUT::Search.search" from regular ruby request to use HTTparty.
 		I was having trouble for some very odd reason getting this request to work on a server

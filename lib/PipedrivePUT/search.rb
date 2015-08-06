@@ -31,7 +31,7 @@ module PipedrivePUT
 
 			  while @more_items == true do
 				count = 0
-				@base = 'https://api.pipedrive.com/v1/searchResults?term=' + term.to_s + '&item_type=' + @item_type.to_s + '&' + @start.to_s + '&limit=500&api_token=' + @@key.to_s
+				@base = 'https://api.pipedrive.com/v1/searchResults?term=' + term.to_s + '&item_type=' + @item_type.to_s + '&start=' + @start.to_s + '&limit=500&api_token=' + @@key.to_s
 
 				#puts @base
 
@@ -61,7 +61,7 @@ module PipedrivePUT
 			  @more_items = true
 
 			  while @more_items == true do
-				@base = 'https://api.pipedrive.com/v1/searchResults?term=' + term.to_s + '&' + @start.to_s + '&limit=500&api_token=' + @@key.to_s
+				@base = 'https://api.pipedrive.com/v1/searchResults?term=' + term.to_s + '&start=' + @start.to_s + '&limit=500&api_token=' + @@key.to_s
 				count = 0
 				#puts @base
 

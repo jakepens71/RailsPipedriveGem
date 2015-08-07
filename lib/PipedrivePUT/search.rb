@@ -35,18 +35,19 @@ module PipedrivePUT
 
 				#puts @base
 
-				@content = HTTParty.get(@base.to_s)
+				@content = open(@base.to_s).read
 
-						
+				#puts @content		
 
-				#@parsed = JSON.parse(@content)
+				@parsed = JSON.parse(@content)
 
-				while count < @content["data"].size
-					table.push(@content["data"][count])
+
+				while count < @parsed["data"].size
+					table.push(@parsed["data"][count])
 					count = count +1
 				end
 
-				@pagination = @content['additional_data']['pagination']
+				@pagination = @parsed['additional_data']['pagination']
 				@more_items = @pagination['more_items_in_collection']
 				#puts @more_items
 				@start = @pagination['next_start']
@@ -65,18 +66,18 @@ module PipedrivePUT
 				count = 0
 				#puts @base
 
-				@content = HTTParty.get(@base.to_s)
+				@content = open(@base.to_s).read
 
-				#puts @content		
+				puts @content		
 
-				#@parsed = JSON.parse(@content)
+				@parsed = JSON.parse(@content)
 
-				while count < @content["data"].size
-					table.push(@content["data"][count])
+				while count < @parsed["data"].size
+					table.push(@parsed["data"][count])
 					count = count +1
 				end
 
-				@pagination = @content['additional_data']['pagination']
+				@pagination = @parsed['additional_data']['pagination']
 				@more_items = @pagination['more_items_in_collection']
 				#puts @more_items
 				@start = @pagination['next_start']

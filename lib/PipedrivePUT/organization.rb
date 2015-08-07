@@ -83,7 +83,10 @@ require 'rest-client'
 						
 					puts @base
 
-					@content = HTTParty.get(@base.to_s, :headers => {'Content-type' => 'application/json'})
+					@content = HTTParty.get(@base, :headers => {'Content-type' => 'application/json'})
+					
+					puts @content
+
 					@parsed = JSON.parse(@content.body)	
 				
 						while count < @parsed["data"].size

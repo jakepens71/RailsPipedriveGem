@@ -81,7 +81,7 @@ require 'rest-client'
 						
 					puts @base.class
 
-					@content = open(@base.to_s).read
+					@content = Net::HTTP.get(@base.to_s)
 					@parsed = JSON.parse(@content)	
 				
 						while count < @parsed["data"].size

@@ -79,12 +79,12 @@ require 'rest-client'
 				while @more_items == true do
 					count = 0
 
-					@base = URI('https://api.pipedrive.com/v1/organizations/find?term=' + name.to_s + '&start=' + @start.to_s + '&limit=500&api_token=' + @@key.to_s)
+					@base = URI('https://api.pipedrive.com/v1/organizations/find?term=' + name+ '&start=' + @start.to_s + '&limit=500&api_token=' + @@key.to_s)
 						
 					puts @base
 
-					@content = HTTParty.get(@base, :headers => {'Content-type' => 'application/json'})
-					
+					@content = open(@base.to_s).read
+
 					puts @content
 
 					@parsed = JSON.parse(@content.body)	

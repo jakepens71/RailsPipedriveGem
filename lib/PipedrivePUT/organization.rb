@@ -87,7 +87,7 @@ require 'rest-client'
 
 					puts @content
 
-					@parsed = JSON.parse(@content.body)	
+					@parsed = JSON.parse(@content)	
 				
 						while count < @parsed["data"].size
 							#table.push(@parsed["data"][count])

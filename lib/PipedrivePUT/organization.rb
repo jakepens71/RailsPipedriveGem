@@ -3,6 +3,8 @@ module PipedrivePUT
 
 include PipedrivePUT
 
+require 'httparty'
+
 require 'rest-client'
 			def self.key
 			 puts @@key
@@ -81,8 +83,8 @@ require 'rest-client'
 						
 					puts @base
 
-					@content = Net::HTTP.get(@base)
-					@parsed = JSON.parse(@content)	
+					@content = HTTParty.get(@base.to_s, :headers => {'Content-type' => 'application/json'})
+					@parsed = JSON.parse(@content.body)	
 				
 						while count < @parsed["data"].size
 							#table.push(@parsed["data"][count])

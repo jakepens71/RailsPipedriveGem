@@ -77,11 +77,11 @@ require 'rest-client'
 				while @more_items == true do
 					count = 0
 
-					@base = 'https://api.pipedrive.com/v1/organizations/find?term=' + name.to_s + '&start=' + @start.to_s + '&limit=500&api_token=' + @@key.to_s
+					@base = URI('https://api.pipedrive.com/v1/organizations/find?term=' + name.to_s + '&start=' + @start.to_s + '&limit=500&api_token=' + @@key.to_s)
 						
-					puts @base.class
+					puts @base
 
-					@content = Net::HTTP.get(@base.to_s)
+					@content = Net::HTTP.get(@base)
 					@parsed = JSON.parse(@content)	
 				
 						while count < @parsed["data"].size

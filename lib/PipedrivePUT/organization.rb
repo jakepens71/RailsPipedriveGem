@@ -79,7 +79,7 @@ require 'rest-client'
 				while @more_items == true do
 					count = 0
 
-					@base = URI('https://api.pipedrive.com/v1/organizations/find?term=' + name+ '&start=' + @start.to_s + '&limit=500&api_token=' + @@key.to_s)
+					@base = URI.parse('https://api.pipedrive.com/v1/organizations/find?term=' + name+ '&start=' + @start.to_s + '&limit=500&api_token=' + @@key.to_s)
 						
 					puts @base
 

@@ -21,7 +21,7 @@ require 'rest-client'
 			  while @more_items == true do
 				count = 0
 				#puts @more_items
-				@base = 'https://api.pipedrive.com/v1/organizations?start=' + @start.to_s + '&limit=500&api_token=' + @@key.to_s
+				@base = URI.parse('https://api.pipedrive.com/v1/organizations?start=' + @start.to_s + '&limit=500&api_token=' + @@key.to_s)
 				#puts @base
 				@content = Net::HTTP.get(@base.to_s)
 				@parsed = JSON.parse(@content)

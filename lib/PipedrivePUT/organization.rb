@@ -23,7 +23,7 @@ require 'rest-client'
 				#puts @more_items
 				@base = URI.parse('https://api.pipedrive.com/v1/organizations?start=' + @start.to_s + '&limit=500&api_token=' + @@key.to_s)
 				#puts @base
-				@content = Net::HTTP.get(@base.to_s)
+				@content = Net::HTTP.get(@base)
 				@parsed = JSON.parse(@content)
 
 				while count < @parsed["data"].size

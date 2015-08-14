@@ -1,3 +1,8 @@
+# (1.1.24) August 14th, 2015 10:52 AM
+	*Ruby version difference was cause of URI issues
+	*Reverted back to NET::HTTP
+	*Fixed get all organizations.
+
 # (1.1.22) August 6th, 2015 2:09 PM
 	*HTTParty error caused URI issues (of course!) Sorry reverting back!
 		PipedirvePUT::Search.search() no longer uses HTTParty

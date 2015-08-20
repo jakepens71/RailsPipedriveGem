@@ -6,7 +6,7 @@ include PipedrivePUT
 require 'rest-client'
 
 			def self.key
-				puts @@key
+				return @@key
 			end
 
 

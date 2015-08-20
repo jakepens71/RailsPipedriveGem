@@ -5,7 +5,7 @@ module PipedrivePUT
 
 
 		def self.key
-			puts @@key
+			return @@key
 		end
 
 
@@ -68,7 +68,7 @@ module PipedrivePUT
 
 				@content = open(@base.to_s).read
 
-				puts @content		
+				#puts @content		
 
 				@parsed = JSON.parse(@content)
 

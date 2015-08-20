@@ -7,7 +7,7 @@ require 'httparty'
 
 require 'rest-client'
 			def self.key
-			 puts @@key
+			 return @@key
 			end
 
 		#Get All Organizations from Pipedrive
@@ -54,7 +54,7 @@ require 'rest-client'
 
 					options.merge!(:name => companyName)
 
-					puts options
+					#puts options
 
 					response = Net::HTTP.post_form(uri, options)
 				end
@@ -81,11 +81,11 @@ require 'rest-client'
 
 					@base = URI.parse('https://api.pipedrive.com/v1/organizations/find?term=' + name+ '&start=' + @start.to_s + '&limit=500&api_token=' + @@key.to_s)
 						
-					puts @base
+					#puts @base
 
 					@content = open(@base.to_s).read
 
-					puts @content
+					#puts @content
 
 					@parsed = JSON.parse(@content)	
 				

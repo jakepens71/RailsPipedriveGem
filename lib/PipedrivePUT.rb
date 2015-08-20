@@ -24,7 +24,7 @@ module PipedrivePUT
 	
 	#See which key is givin
 	def self.getKey
-	  @@key
+	  return @@key
 	end
 
 end

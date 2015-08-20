@@ -55,7 +55,7 @@ module PipedrivePUT
 
 					options.merge!(:name => name)
 
-					puts options
+					#puts options
 
 					response = HTTParty.post(@url.to_s, :body => options.to_json, :headers => {'Content-type' => 'application/json'})
 				end

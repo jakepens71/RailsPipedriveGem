@@ -1,3 +1,6 @@
+# (1.1.25) August 20th, 2015 7:42 AM
+	*All "Put" messages that were outputted are now commented out
+
 # (1.1.24) August 14th, 2015 10:52 AM
 	*Ruby version difference was cause of URI issues
 	*Reverted back to NET::HTTP

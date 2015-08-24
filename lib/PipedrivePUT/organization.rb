@@ -70,39 +70,50 @@ require 'rest-client'
 
 			#Find Organization by name
 			def self.findOrganizationByName(name)
-				@start = 0
-			  
-				table = Array.new
-				@more_items = true
-				tablesize = 0
+				begin
+					@start = 0
+				  
+					table = Array.new
+					@more_items = true
+					tablesize = 0
 
-				while @more_items == true do
-					count = 0
+					while @more_items == true do
+						count = 0
 
-					@base = URI.parse('https://api.pipedrive.com/v1/organizations/find?term=' + name+ '&start=' + @start.to_s + '&limit=500&api_token=' + @@key.to_s)
+						@base = URI.parse('https://api.pipedrive.com/v1/organizations/find?term=' + name+ '&start=' + @start.to_s + '&limit=500&api_token=' + @@key.to_s)
+							
+						#puts @base
+
+						@content = open(@base.to_s).read
+
+						if @content == nil
+							table = []
+							return table
+						else
+
+							#puts @content
+
+							@parsed = JSON.parse(@content)	
 						
-					#puts @base
-
-					@content = open(@base.to_s).read
-
-					#puts @content
-
-					@parsed = JSON.parse(@content)	
-				
-						while count < @parsed["data"].size
-							#table.push(@parsed["data"][count])
-							table[tablesize] = @parsed["data"][count]
-							count = count +1
-							tablesize = tablesize + 1
-					
-						end	
-					@pagination = @parsed['additional_data']['pagination']
-					@more_items = @pagination['more_items_in_collection']
-					#puts @more_items
-					@start = @pagination['next_start']
-					#puts @start
-			  	end
-				return table
+								while count < @parsed["data"].size
+									#table.push(@parsed["data"][count])
+									table[tablesize] = @parsed["data"][count]
+									count = count +1
+									tablesize = tablesize + 1
+							
+								end	
+							@pagination = @parsed['additional_data']['pagination']
+							@more_items = @pagination['more_items_in_collection']
+							#puts @more_items
+							@start = @pagination['next_start']
+							#puts @start
+						end
+				  	end
+					return table
+				rescue OpenURI::HTTPError => error
+					response = error.io
+					return response.status
+				end
 			end
 			
 

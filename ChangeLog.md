@@ -1,3 +1,6 @@
+# (1.1.26) September 1st, 2015 2:22 PM
+	*Updated Organization methods with some "rescue" clases. Certain methods were failing when no data was returned"
+
 # (1.1.25) August 20th, 2015 7:42 AM
 	*All "Put" messages that were outputted are now commented out
 

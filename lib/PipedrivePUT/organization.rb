@@ -12,35 +12,34 @@ require 'rest-client'
 
 		#Get All Organizations from Pipedrive
 		       def self.getAllOrgs()
-			  
-			  @start = 0
-			  
-			  table = Array.new
-			  @more_items = true
-			  tablesize = 0
-			  while @more_items == true do
-				count = 0
-				#puts @more_items
-				@base = URI.parse('https://api.pipedrive.com/v1/organizations?start=' + @start.to_s + '&limit=500&api_token=' + @@key.to_s)
-				#puts @base
-				@content = Net::HTTP.get(@base)
-				@parsed = JSON.parse(@content)
+					  @start = 0
+					  
+					  table = Array.new
+					  @more_items = true
+					  tablesize = 0
+					  while @more_items == true do
+						count = 0
+						#puts @more_items
+						@base = URI.parse('https://api.pipedrive.com/v1/organizations?start=' + @start.to_s + '&limit=500&api_token=' + @@key.to_s)
+						#puts @base
+						@content = Net::HTTP.get(@base)
+						@parsed = JSON.parse(@content)
 
-				while count < @parsed["data"].size
-					#table.push(@parsed["data"][count])
-					table[tablesize] = @parsed["data"][count]
-					count = count +1
-					tablesize = tablesize + 1
-				end
+						while count < @parsed["data"].size
+							#table.push(@parsed["data"][count])
+							table[tablesize] = @parsed["data"][count]
+							count = count +1
+							tablesize = tablesize + 1
+						end
 
-				@pagination = @parsed['additional_data']['pagination']
-				@more_items = @pagination['more_items_in_collection']
-				#puts @more_items
-				@start = @pagination['next_start']
-				#puts @start
-			  end
+						@pagination = @parsed['additional_data']['pagination']
+						@more_items = @pagination['more_items_in_collection']
+						#puts @more_items
+						@start = @pagination['next_start']
+						#puts @start
+					  end
 
-			return table
+					return table
 			end
 
 
@@ -62,10 +61,19 @@ require 'rest-client'
 
 			#Return data of a specific Organization
 			def self.getOrganization(id)
-				@base = 'https://api.pipedrive.com/v1/organizations/' + id.to_s + '?api_token=' + @@key.to_s
-				@content = open(@base.to_s).read
-				@parsed = JSON.parse(@content)
-				return @parsed
+				begin
+					@base = 'https://api.pipedrive.com/v1/organizations/' + id.to_s + '?api_token=' + @@key.to_s
+					@content = open(@base.to_s).read
+					@parsed = JSON.parse(@content)
+					if @parsed["data"].nil?
+							return "Organization does not exist in pipedrive"
+					else
+						return @parsed
+					end
+				rescue OpenURI::HTTPError => error
+					response = error.io
+					return response.status
+				end
 			end
 
 			#Find Organization by name
@@ -86,21 +94,67 @@ require 'rest-client'
 
 						@content = open(@base.to_s).read
 
-						if @content == nil
-							table = []
-							return table
-						else
-
 							#puts @content
 
-							@parsed = JSON.parse(@content)	
+							@parsed = JSON.parse(@content)
+
+							if @parsed["data"].nil?
+								return "Organization does not exist in pipedrive"
+							else
 						
+										while count < @parsed["data"].size
+											#table.push(@parsed["data"][count])
+											table[tablesize] = @parsed["data"][count]
+											count = count +1
+											tablesize = tablesize + 1
+									
+										end	
+									@pagination = @parsed['additional_data']['pagination']
+									@more_items = @pagination['more_items_in_collection']
+									#puts @more_items
+									@start = @pagination['next_start']
+									#puts @start
+								end
+						  	end
+							return table
+
+				rescue OpenURI::HTTPError => error
+					response = error.io
+					return response.status
+				end
+			end
+			
+
+			#Get Persons of an Organization
+			def self.getPersonsOfOrganization(id)
+				begin
+					@start = 0
+				  
+					table = Array.new
+					@more_items = true
+					tablesize = 0
+
+					while @more_items == true do
+						count = 0
+
+						@base = 'https://api.pipedrive.com/v1/organizations/' + id.to_s + '/persons?&start=' + @start.to_s + '&limit=500&api_token=' + @@key.to_s
+											
+						@content = open(@base.to_s).read
+
+						puts @content
+
+						@parsed = JSON.parse(@content)
+
+						if @parsed["data"].nil?
+							return "Organization does not have any Person associated with that id"
+						else
+					
 								while count < @parsed["data"].size
 									#table.push(@parsed["data"][count])
 									table[tablesize] = @parsed["data"][count]
 									count = count +1
 									tablesize = tablesize + 1
-							
+						
 								end	
 							@pagination = @parsed['additional_data']['pagination']
 							@more_items = @pagination['more_items_in_collection']
@@ -114,44 +168,6 @@ require 'rest-client'
 					response = error.io
 					return response.status
 				end
-			end
-			
-
-			#Get Persons of an Organization
-			def self.getPersonsOfOrganization(id)
-				@start = 0
-			  
-				table = Array.new
-				@more_items = true
-				tablesize = 0
-
-				while @more_items == true do
-					count = 0
-
-					@base = 'https://api.pipedrive.com/v1/organizations/' + id.to_s + '/persons?&start=' + @start.to_s + '&limit=500&api_token=' + @@key.to_s
-										
-					@content = open(@base.to_s).read
-					@parsed = JSON.parse(@content)
-
-					if @parsed["data"].nil?
-						return "Organization does not have any Person associated with it"
-					else
-				
-							while count < @parsed["data"].size
-								#table.push(@parsed["data"][count])
-								table[tablesize] = @parsed["data"][count]
-								count = count +1
-								tablesize = tablesize + 1
-					
-							end	
-						@pagination = @parsed['additional_data']['pagination']
-						@more_items = @pagination['more_items_in_collection']
-						#puts @more_items
-						@start = @pagination['next_start']
-						#puts @start
-					end
-			  	end
-				return table
 			end
 
 			#Update an Organization

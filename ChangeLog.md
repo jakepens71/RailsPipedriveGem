@@ -1,3 +1,6 @@
+# (1.1.27) October 12th, 2015 12:00 PM
+	*Added ability to add an organization field (PipedrivePUT::OrganizationFields.addOrganizationField(< field name>, <field type>, <options>)
+
 # (1.1.26) September 1st, 2015 2:22 PM
 	*Updated Organization methods with some "rescue" clases. Certain methods were failing when no data was returned"
 

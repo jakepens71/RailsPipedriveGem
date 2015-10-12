@@ -216,7 +216,7 @@ Add Organization Field
   PipedrivePUT::OrganizationFields.addOrganizationField(< Field Name>, <Field Type>, { <options> } )
 ```
 
-Field types: '', varchar, varchar_auto, text, double, monetary, date, set, enum, user, org, people, phone, time, timerange, daterange
+Field types: " ", varchar, varchar_auto, text, double, monetary, date, set, enum, user, org, people, phone, time, timerange, daterange
 
 NOTE: The field type for Pipedrive is required. However, it can also be left as empty.
 

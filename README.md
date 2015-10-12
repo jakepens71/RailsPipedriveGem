@@ -211,8 +211,6 @@ NOTE: This searches for everything in Pipedrive (deal, organization, user, state
 
 I hope to add additional support to break this down at a later time.
 
-## Organization Fields
-
 Add Organization Field
 ```ruby
   PipedrivePUT::OrganizationFields.addOrganizationField(< Field Name>, <Field Type>, { <options> } )

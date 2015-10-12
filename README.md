@@ -207,11 +207,25 @@ Get all fields that are able to be used in an organization
   PipedrivePUT::OrganizationFields.getAllOrganizationFields
 ```
 
-
 NOTE: This searches for everything in Pipedrive (deal, organization, user, state, product, etc.) 
 
 I hope to add additional support to break this down at a later time.
 
+## Organization Fields
+
+Add Organization Field
+```ruby
+  PipedrivePUT::OrganizationFields.addOrganizationField(< Field Name>, <Field Type>, { <options> } )
+```
+
+Field types: '', varchar, varchar_auto, text, double, monetary, date, set, enum, user, org, people, phone, time, timerange, daterange
+
+NOTE: The field type for Pipedrive is required. However, it can also be left as empty.
+
+Example:
+```ruby
+  PipedrivePUT::OrganizationFields.addOrganizationField("Total Ordered in September", "monetary", {:important_flag => 'true'})
+```
 
 Data is returned in JSON format.
 

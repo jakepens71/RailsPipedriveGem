@@ -33,8 +33,24 @@ include PipedrivePUT
 			  end
 
 			return table
-			end
+		end
 
+		#Add an organization Field
+		def self.addOrganizationField(fieldName, fieldType, options = {})
+			#args.each_with_index{ |arg, i| puts "#{i+1}. #{arg}" } 
+
+			@url = 'https://api.pipedrive.com/v1/organizationFields?api_token=' + @@key.to_s
+
+			if (!options.nil?)
+
+				options.merge!(:name => fieldName.to_s)
+				options.merge!(:field_type => fieldType.to_s)
+
+				#puts options
+
+				response = HTTParty.post(@url.to_s, :body => options.to_json, :headers => {'Content-type' => 'application/json'})
+			end
+		end
 
 	end
 end

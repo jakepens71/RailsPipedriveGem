@@ -1,4 +1,6 @@
 module PipedrivePUT
-  class Activity < Mainact
+  class Activity
+    include PipedrivePUT
+
   end
 end

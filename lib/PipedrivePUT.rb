@@ -7,6 +7,9 @@ require 'PipedrivePUT/persons'
 require 'PipedrivePUT/pipelines'
 require 'PipedrivePUT/recents'
 require 'PipedrivePUT/organization_field'
+require 'PipedrivePUT/activity'
+require 'PipedrivePUT/activity-type'
+
 
 require 'json'
 require 'open-uri'

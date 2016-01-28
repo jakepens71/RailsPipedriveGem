@@ -1,3 +1,8 @@
+# (1.1.27) January 28th, 2016 1:40 PM
+        *Added Activity class to main module include getActivity method to retrieve activities per specific user"
+
+
+
 # (1.1.27) October 29th, 2015 8:05 AM
         *Don't bump up the version -Began adding in activities & activiites-task- not included in main PipdrivePUT module using mainact as main construct for http response heads and body
          possibly redoing these if need be, also added in test dir for future test implications -Jsnow 10-29-2015"

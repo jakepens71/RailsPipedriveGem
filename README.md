@@ -180,6 +180,13 @@ Example
   PipedrivePUT::Persons.updatePerson(10, :email => "test@test.com")
 ```
 
+## Activities
+
+Get all Activites per user 
+```ruby 
+  PipedrivePUT::Activity.getActivity(< user_id >)
+```
+
 
 ## Pipelines
 

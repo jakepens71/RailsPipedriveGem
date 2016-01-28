@@ -187,6 +187,13 @@ Get all Activites per user
   PipedrivePUT::Activity.getActivity(< user_id >)
 ```
 
+## Activity Types
+
+Get all Activity Types
+```ruby
+  PipedrivePUT::Activity.getActivity_type
+```
+
 
 ## Pipelines
 

@@ -1,3 +1,7 @@
+# (1.1.27) January 28th, 2016 1:58 PM
+        *Included getActivity_types method to retrieve all activity types"
+
+
 # (1.1.27) January 28th, 2016 1:40 PM
         *Added Activity class to main module include getActivity method to retrieve activities per specific user"
 

@@ -6,10 +6,10 @@ require 'PipedrivePUT/version'
 Gem::Specification.new do |spec|
   spec.name          = "PipedrivePUT"
   spec.version       = PipedrivePUT::VERSION
-  spec.authors       = ["JakePens71"]
-  spec.email         = ["jake_ps@comcast.net"]
+  spec.authors       = ["JakePens71", "Justin Snow"]
+  spec.email         = ["jake_ps@comcast.net", "jrsnow8921@pennunited.com"]
   spec.summary       = 'Pipedrive gem to retrieve data from Pipedrive.com'
-  spec.description   = 'Pipedrive gem supports a small amount of functionality at the moment. Will add more when I can.'
+  spec.description   = 'Pipedrive gem support for activites, activity-types, deals, organizations, organization_fields, persons, pipelines, recents, search, and users.'
   spec.homepage      = "https://github.com/jakepens71/RailsPipedriveGem"
   spec.license       = "MIT"
 

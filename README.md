@@ -1,6 +1,7 @@
 # PipedrivePUT
 
-TODO: Write a gem description
+## Status
+<a href="https://badge.fury.io/rb/PipedrivePUT"><img src="https://badge.fury.io/rb/PipedrivePUT.svg" alt="Gem Version" height="22"></a>
 
 ## Installation
 

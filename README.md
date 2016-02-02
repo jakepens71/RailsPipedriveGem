@@ -3,6 +3,11 @@
 ## Status
 <a href="https://badge.fury.io/rb/PipedrivePUT"><img src="https://badge.fury.io/rb/PipedrivePUT.svg" alt="Gem Version" height="22"></a>
 
+## Travis CI Build Status
+<a href="https://travis-ci.org/jakepens71"><img src="https://travis-ci.org/jakepens71/RailsPipedriveGem.svg?branch=master" height="22"></a>
+
+
+
 ## Installation
 
 Add this line to your application's Gemfile:

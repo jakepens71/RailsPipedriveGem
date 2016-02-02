@@ -1,7 +1,6 @@
 language: ruby
 
 
-
 env:
   - RAILS_VERSION="~> 3.2.22"
   - RAILS_VERSION="~> 4.0.13"

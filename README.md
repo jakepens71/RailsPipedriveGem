@@ -42,12 +42,6 @@ Make sure to change the value inside of this file
 
 ```
 
-## Usage
-
-```ruby
-   PipedrivePUT.key(< API Token Here >)
-```
-
 ## Organizations
 
 Get all organizations from your account at Pipedrive

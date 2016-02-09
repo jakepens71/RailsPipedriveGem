@@ -24,11 +24,22 @@ gem 'httparty'
 
 And then execute:
 
-    $ bundle
+    $ bundle install
 
 Or install it yourself as:
 
     $ gem install PipedrivePUT
+
+
+## To install config file 
+
+  rails g pipedrive_p_u_t:config
+This will install a config file in config/initializers/pipedriveput.rb
+Make sure to change the value inside of this file 
+```ruby 
+  PipedrivePUT.key('your_api_key_goes_here')
+
+```
 
 ## Usage
 

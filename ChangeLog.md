@@ -1,5 +1,5 @@
 # (1.1.30) February 9th, 2016 10:58 AM
-        *Added Currency class with a method to retrieve currencies, also added get activities for a specific organization"
+        *Added Currency class with a method to retrieve currencies, also added get activities for a specific organization and config install"
 
 
 

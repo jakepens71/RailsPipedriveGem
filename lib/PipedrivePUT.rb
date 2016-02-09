@@ -20,6 +20,11 @@ module PipedrivePUT
 
 	attr_accessor :key
 
+        def self.configure
+          @config = Config.new
+          yield(@config)
+        end 
+
   	#set the giving API key for pipedrive
 	def self.key(key)
 	   @@key = key	  

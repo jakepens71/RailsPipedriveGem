@@ -21,7 +21,7 @@ module PipedrivePUT
 	attr_accessor :key
 
         def self.configure
-          @config = Config.new
+          @config = RbConfig.new
           yield(@config)
         end 
 

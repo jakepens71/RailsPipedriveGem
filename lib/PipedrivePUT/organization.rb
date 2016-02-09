@@ -42,7 +42,8 @@ require 'rest-client'
 					return table
 			end
 
-
+                        
+                          
 			#Add an organization
 			def self.addOrganization(companyName, options = {})
 				#args.each_with_index{ |arg, i| puts "#{i+1}. #{arg}" } 

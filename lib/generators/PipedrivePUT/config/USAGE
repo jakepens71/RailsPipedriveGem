@@ -1,0 +1,5 @@
+Description:
+  Creates a config file for PipedrivePUT gem with key to access Pipedrive Api
+
+Example:
+  rails g PipedrivePUT:config

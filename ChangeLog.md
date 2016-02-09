@@ -1,3 +1,8 @@
+# (1.1.30) February 9th, 2016 10:58 AM
+        *Added Currency class with a method to retrieve currencies, also added get activities for a specific organization"
+
+
+
 # (1.1.27) January 28th, 2016 1:58 PM
         *Included getActivity_types method to retrieve all activity types"
 

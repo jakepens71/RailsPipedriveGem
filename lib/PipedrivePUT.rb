@@ -9,7 +9,7 @@ require 'PipedrivePUT/recents'
 require 'PipedrivePUT/organization_field'
 require 'PipedrivePUT/activity'
 require 'PipedrivePUT/activity-type'
-
+require 'PipedrivePUT/currencies'
 
 require 'json'
 require 'open-uri'

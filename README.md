@@ -193,6 +193,12 @@ Get all Activites per user
   PipedrivePUT::Activity.getActivity(< user_id >)
 ```
 
+Get all Activites for a specific organization 
+
+```ruby 
+   PipedrivePUT::Activity.getOrgActivities(< org_id >)
+```
+
 ## Activity Types
 
 Get all Activity Types
@@ -200,6 +206,18 @@ Get all Activity Types
   PipedrivePUT::Activity.getActivity_type
 ```
 
+
+## Currencies
+
+Get all Currencies
+```ruby 
+  PipedrivePUT::Currencies.getAllCurr
+```
+
+Search for Currencies based off currency name 
+```ruby
+  PipedrivePUT::Currencies.getCurr(< currency_name >)
+```
 
 ## Pipelines
 

@@ -20,10 +20,6 @@ module PipedrivePUT
 
 	attr_accessor :key
 
-        def self.configure
-          @config = RbConfig.new
-          yield(@config)
-        end 
 
   	#set the giving API key for pipedrive
 	def self.key(key)

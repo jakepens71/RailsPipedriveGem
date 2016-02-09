@@ -15,7 +15,8 @@ module PipedrivePUT
 #----------------------------------------- Gets activites of a specific organization------------------------------------------------
 
     def self.getOrgActivities(org_id)
-      @base = 'https://api.pipedrive.com/v1/organizations/' + org_id.to_s + 'activities?start=0' + '&api_token=' + @@key.to_s
+      @slash = "/"
+      @base = 'https://api.pipedrive.com/v1/organizations/' + org_id.to_s + @slash + 'activities?start=0' + '&api_token=' + @@key.to_s
       #puts @base
       @content = open(@base.to_s).read
       @parsed = JSON.parse(@content)

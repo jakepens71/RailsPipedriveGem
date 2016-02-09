@@ -32,8 +32,9 @@ Or install it yourself as:
 
 
 ## To install config file 
-
+```ruby
   rails g pipedrive_p_u_t:config
+```
 This will install a config file in config/initializers/pipedriveput.rb
 Make sure to change the value inside of this file 
 ```ruby 

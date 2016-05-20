@@ -99,7 +99,7 @@ module PipedrivePUT
         url << "&#{key}=#{value}"
       end
 
-      puts "URL: #{url}
+      puts "URL: #{url}"
 
       while more_items == true
         count = 0

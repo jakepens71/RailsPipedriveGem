@@ -91,11 +91,15 @@ module PipedrivePUT
       params[:search_by_email] = options.fetch(:search_by_email, 0)
       params[:api_token]       = @@key.to_s
 
+      puts "PARAMS: #{params}"
+
       url = "https://api.pipedrive.com/v1/persons/find?term=#{term}"
 
       params.each do |key, value|
         url << "&#{key}=#{value}"
       end
+
+      puts "URL: #{url}
 
       while more_items == true
         count = 0

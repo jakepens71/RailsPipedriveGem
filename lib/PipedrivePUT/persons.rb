@@ -86,7 +86,7 @@ module PipedrivePUT
 
       # optional search parameters
       params[:start]           = options.fetch(:start, 0)
-      params[:org_id]          = options.fetch(:org_id, nil)
+      params[:org_id]          = options.fetch(:org_id, nil) if params[:org_id]
       params[:limit]           = options.fetch(:limit, 500)
       params[:search_by_email] = options.fetch(:search_by_email, 0)
       params[:api_token]       = @@key.to_s

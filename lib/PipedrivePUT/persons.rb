@@ -77,11 +77,11 @@ module PipedrivePUT
     # limit - Items shown per page
     # search_by_email (boolean) - when enabled, term will only be matched against email addresses
     # of people. Default: false
-		def self.searchForPerson(term, options = {})
-			table = Array.new
-			more_items = true
+    def self.searchForPerson(term, options = {})
+      table = []
+      more_items = true
 
-			tablesize = 0
+      tablesize = 0
       params = {}
 
       # optional search parameters
@@ -91,30 +91,30 @@ module PipedrivePUT
       params['search_by_email'] = options.fetch(:search_by_email, 0)
       params['api_token']       = @@key.to_s
 
-      url = "https://api.pipedrive.com/v1/persons/find?term=#{term.to_s}"
+      url = "https://api.pipedrive.com/v1/persons/find?term=#{term}"
 
       params.each do |key, value|
         url << "&#{key}=#{value}"
       end
 
-			while more_items == true do
+      while more_items == true
         count = 0
 
         content = open(url).read
-				parsed = JSON.parse(content)
+        parsed = JSON.parse(content)
 
-				return 'No Persons returned' if parsed['data'].nil?
+        return 'No Persons returned' if parsed['data'].nil?
 
-        while count < @parsed["data"].size
-					table[tablesize] = parsed["data"][count]
-					count += 1
-					tablesize += 1
-				end
-				pagination = parsed['additional_data']['pagination']
-				more_items = pagination['more_items_in_collection']
-				start = pagination['next_start']
-			end
-      return table
-	  end
+        while count < parsed['data'].size
+          table[tablesize] = parsed['data'][count]
+          count += 1
+          tablesize += 1
+        end
+        pagination       = parsed['additional_data']['pagination']
+        more_items       = pagination['more_items_in_collection']
+        @params['start'] = pagination['next_start']
+      end
+      table
+    end
   end
 end

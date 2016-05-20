@@ -85,11 +85,11 @@ module PipedrivePUT
       params = {}
 
       # optional search parameters
-      params['start']           = options.fetch(:start, 0)
-      params['org_id']          = options.fetch(:org_id, nil)
-      params['limit']           = options.fetch(:limit, 500)
-      params['search_by_email'] = options.fetch(:search_by_email, 0)
-      params['api_token']       = @@key.to_s
+      params[:start]           = options.fetch(:start, 0)
+      params[:org_id]          = options.fetch(:org_id, nil)
+      params[:limit]           = options.fetch(:limit, 500)
+      params[:search_by_email] = options.fetch(:search_by_email, 0)
+      params[:api_token]       = @@key.to_s
 
       url = "https://api.pipedrive.com/v1/persons/find?term=#{term}"
 

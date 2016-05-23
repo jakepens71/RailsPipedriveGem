@@ -21,7 +21,7 @@ module PipedrivePUT
 
     #  subject (required) (string) Subject of the activity
     #  done    (optional) (enumerated) Whether the activity is done or not. 0 = Not done, 1 = Done
-    #  type (required) (string) Type of the activity. This is in correlation with the key_string parameter of ActivityTypes.
+    #  type (required) (string) Type of the activity. (call, meeting, task, deadline, email, lunch)
     #  due_date (optional) (date) Due date of the activity. Format: YYYY-MM-DD
     #  due_time (optional) (time) Due time of the activity in UTC. Format: HH:MM
     #  duration (optional) (time) Duration of the activity. Format: HH:MM

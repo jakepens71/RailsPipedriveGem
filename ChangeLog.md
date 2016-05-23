@@ -1,3 +1,6 @@
+# (1.1.33) May 23rd, 2016 9:10 AM
+        *Merged kevTheDev's commits to master"
+
 # (1.1.30) February 9th, 2016 10:58 AM
         *Added Currency class with a method to retrieve currencies, also added get activities for a specific organization and config install"
 

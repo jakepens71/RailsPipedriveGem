@@ -109,9 +109,9 @@ module PipedrivePUT
           count += 1
           tablesize += 1
         end
-        pagination       = parsed['additional_data']['pagination']
-        more_items       = pagination['more_items_in_collection']
-        params['start'] = pagination['next_start']
+        pagination     = parsed['additional_data']['pagination']
+        more_items     = pagination['more_items_in_collection']
+        params[:start] = pagination['next_start']
       end
       table
     end

@@ -119,6 +119,13 @@ Get All Deals
 PipedrivePUT::Deal.getAllDeals
 ```
 
+## Deal Fields
+
+Get All Deal Fields
+```ruby
+  PipedrivePUT::DealFields.getAllDealFields
+```
+
 ## Search
 
 Search entire Pipedrive (Deals, Organizations, Product, File, Person)
@@ -203,6 +210,12 @@ Get all Activites for a specific organization
 
 ```ruby 
    PipedrivePUT::Activity.getOrgActivities(< org_id >)
+```
+
+Add an Activity 
+
+```ruby 
+   PipedrivePUT::Activity.addActivity(<subject>, <type>, <:options => "value">)
 ```
 
 ## Activity Types

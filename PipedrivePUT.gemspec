@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["JakePens71", "Justin Snow"]
   spec.email         = ["jake_ps@comcast.net", "jrsnow8921@pennunited.com"]
   spec.summary       = 'Pipedrive gem to retrieve data from Pipedrive.com'
-  spec.description   = 'Pipedrive gem support for activites, activity-types, deals, organizations, organization_fields, persons, pipelines, recents, search, and users.'
+  spec.description   = 'Pipedrive gem support for activites, activity-types, deals, deal fields,organizations, organization fields, persons, pipelines, recents, search, and users.'
   spec.homepage      = "https://github.com/jakepens71/RailsPipedriveGem"
   spec.license       = "MIT"
 

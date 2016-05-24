@@ -1,3 +1,7 @@
+
+# (1.1.34) May 24th, 2016 7:25 AM
+        *Add activity method added- along with refactoring/tidying of classes, also added DealFields Class to get all deal fields"
+
 # (1.1.33) May 23rd, 2016 9:10 AM
         *Merged kevTheDev's commits to master"
 

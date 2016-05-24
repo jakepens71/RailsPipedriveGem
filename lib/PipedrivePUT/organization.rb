@@ -85,7 +85,7 @@ require 'rest-client'
         params[:limit]     = options.fetch(:limit, 500)
         params[:api_token] = @@key.to_s
 
-        url = "https://api.pipedrive.com/v1/organizations/find?term=#{term}"
+        url = "https://api.pipedrive.com/v1/organizations/find?term=#{name}"
 
         params.each do |key, value|
           url << "&#{key}=#{value}"

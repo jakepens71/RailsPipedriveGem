@@ -45,19 +45,10 @@ require 'rest-client'
 
 
 			#Add an organization
-			def self.addOrganization(companyName, options = {})
-				#args.each_with_index{ |arg, i| puts "#{i+1}. #{arg}" }
-
-				uri = URI.parse('https://api.pipedrive.com/v1/organizations?api_token=' + @@key.to_s)
-
-				if (!options.nil?)
-
-					options.merge!(:name => companyName)
-
-					#puts options
-
-					response = Net::HTTP.post_form(uri, options)
-				end
+			def self.addOrganization(company_name, options = {})
+				uri = "https://api.pipedrive.com/v1/organizations?api_token=#{@@key}"
+				options = options.merge(name: company_name)
+        HTTParty.post(uri, body: options.to_json, headers: {'Content-type' => 'application/json'})
 			end
 
 			#Return data of a specific Organization

@@ -72,15 +72,12 @@ require 'rest-client'
       def self.findOrganizationByName(name, options = {})
         params = {}
 
+        params[:term]      = name if name && !name.empty?
         params[:start]     = options.fetch(:start, 0)
         params[:limit]     = options.fetch(:limit, 500)
         params[:api_token] = @@key.to_s
 
-        url = "https://api.pipedrive.com/v1/organizations/find?term=#{name}"
-
-        params.each do |key, value|
-          url << "&#{key}=#{value}"
-        end
+        url = "https://api.pipedrive.com/v1/organizations/find?#{URI.encode_www_form(params)}"
 
         begin
           table = []

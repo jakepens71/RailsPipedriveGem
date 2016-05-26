@@ -85,23 +85,19 @@ module PipedrivePUT
       params = {}
 
       # optional search parameters
+      params[:term]            = term if term && !term.empty?
       params[:start]           = options.fetch(:start, 0)
       params[:org_id]          = options.fetch(:org_id, nil) if params[:org_id]
       params[:limit]           = options.fetch(:limit, 500)
       params[:search_by_email] = options.fetch(:search_by_email, 0)
       params[:api_token]       = @@key.to_s
 
-      url = "https://api.pipedrive.com/v1/persons/find?term=#{term}"
-
-      params.each do |key, value|
-        url << "&#{key}=#{value}"
-      end
+      url = "https://api.pipedrive.com/v1/persons/find?#{URI.encode_www_form(params)}"
 
       while more_items == true
         count = 0
 
-        content = open(url).read
-        parsed = JSON.parse(content)
+        parsed = HTTParty.get(url)
         return table if parsed['data'].nil?
 
         while count < parsed['data'].size

@@ -1,3 +1,9 @@
+# (1.1.37) May 26th, 2016 9:22 AM 
+        *Return errors on missing search term"
+
+# (1.1.36) May 26th, 2016 9:00 AM
+        *"
+
 # (1.1.35) May 26th, 2016 8:21 AM
         *Added currency calculator to currencies class" 
 

@@ -1,4 +1,5 @@
-
+# (1.1.35) May 26th, 2016 8:21 AM
+        *Added currency calculator to currencies class" 
 
 # (1.1.34) May 24th, 2016 7:42 AM
         *Add activity method added- along with refactoring/tidying of classes, also added DealFields Class to get all deal fields. Added kevTheDev's 

@@ -238,6 +238,20 @@ Search for Currencies based off currency name
   PipedrivePUT::Currencies.getCurr(< currency_name >)
 ```
 
+If you want to get fancy and calculate exchange rates I added method in for that as well :)
+```ruby 
+   PipedrivePUT::Currencies.getExchangeRate(< currency_name >, < options = {} >)
+   #this uses the gem 'money' and 'google_currency'
+   #The options for this method are :amount and :ex_code
+   # :amount needs to look like this wholenumber_change so $100.80 would look like 100_80 
+   # :ex_code will be the currency code you want to calculate the exchange rate for
+   #Ex: 
+   PipedrivePUT::Currencies.getExchangeRate('Australian Dollar', :amount => "100_80", :ex_code => "USD")
+   #=> "$72.72"
+
+```
+
+
 ## Pipelines
 
 Get all Pipelines

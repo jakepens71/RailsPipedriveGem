@@ -16,7 +16,12 @@ require 'PipedrivePUT/deal_fields'
 require 'json'
 require 'open-uri'
 require 'rest-client'
+require 'money'
+require 'money/bank/google_currency'
 
+
+#this is for exchange calculations to make currency format nicely.
+I18n.enforce_available_locales = false
 
 module PipedrivePUT
 

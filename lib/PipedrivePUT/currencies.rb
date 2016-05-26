@@ -2,6 +2,7 @@ module PipedrivePUT
   class Currencies
     include PipedrivePUT
 
+    
 #---------------------------------------------------------get all currencies----------------------------------------------------------------------------------------------------------------------
     def self.getAllCurr
       @base = 'https://api.pipedrive.com/v1/currencies?api_token=' + @@key.to_s
@@ -64,6 +65,23 @@ module PipedrivePUT
     end
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   end
+
+#----------------------------------------------------------------------------------------Currency Calculator------------------------------------------------------------------------------------
+
+  def self.getExchangeRate(currency_name, options = {})
+    get_curr = PipedrivePUT::Currencies.getCurr(currency_name)	  
+    get_code = get_curr['data'][0]['code']    
+    Money::Bank::GoogleCurrency.ttl_in_seconds = 86400
+    Money.default_bank = Money::Bank::GoogleCurrency.new
+    get_amount = options[:amount].to_i
+    set_new_exchange = options[:ex_code].parameterize.to_sym
+    set_amount_and_code_to_exchange = Money.new(get_amount, get_code)
+    exchange_rate = set_amount_and_code_to_exchange
+    formated_rate = exchange_rate.exchange_to(set_new_exchange).format  	
+    return formated_rate
+  end  	  
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 end
 
 

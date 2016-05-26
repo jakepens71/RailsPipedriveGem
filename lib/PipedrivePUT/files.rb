@@ -20,7 +20,7 @@ module PipedrivePUT
       base = "https://api.pipedrive.com/v1/files/#{file_id}?api_token=#{@@key}"
       content = open(base).read
       p_data = JSON.parse(content)
-      file_name = p_data['data'][0]['file_name']
+      file_name = p_data['data']['file_name']
       open(file_name, 'wb') do |d_file|
         d_file << open(file).read
       end

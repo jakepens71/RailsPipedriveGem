@@ -1,5 +1,5 @@
-require "PipedrivePUT/version"
-require "PipedrivePUT/organization"
+require 'PipedrivePUT/version'
+require 'PipedrivePUT/organization'
 require 'PipedrivePUT/search'
 require 'PipedrivePUT/users'
 require 'PipedrivePUT/deal'
@@ -11,7 +11,8 @@ require 'PipedrivePUT/activity'
 require 'PipedrivePUT/activity-type'
 require 'PipedrivePUT/currencies'
 require 'PipedrivePUT/deal_fields'
-
+require 'PipedrivePUT/filters'
+require 'PipedrivePUT/files'
 
 require 'json'
 require 'open-uri'

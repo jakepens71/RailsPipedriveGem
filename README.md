@@ -225,6 +225,24 @@ Get all Activity Types
   PipedrivePUT::Activity.getActivity_type
 ```
 
+## Filters 
+
+Get all filters 
+```ruby
+  PipedrivePUT::Filters.getFilters
+```
+
+## Files 
+Get all files
+```ruby 
+  PipedrivePUT::Files.getAllFiles
+```
+
+Download a specific file 
+```ruby 
+  PipedrivePUT::Files.downloadFile(< file_id >)
+```
+# ^This will download the specific file and place it in the root dir of your current dir
 
 ## Currencies
 

@@ -1,3 +1,6 @@
+# (1.1.38) May 26th, 2016 2:10 PM
+        *Added filters and files classes"
+
 # (1.1.37) May 26th, 2016 9:22 AM 
         *Return errors on missing search term"
 

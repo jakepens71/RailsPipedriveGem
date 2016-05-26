@@ -97,8 +97,7 @@ module PipedrivePUT
       while more_items == true
         count = 0
 
-        content = open(url).read
-        parsed = JSON.parse(content)
+        parsed = HTTParty.get(url)
         return table if parsed['data'].nil?
 
         while count < parsed['data'].size

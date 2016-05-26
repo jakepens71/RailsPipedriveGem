@@ -10,6 +10,8 @@ require 'PipedrivePUT/organization_field'
 require 'PipedrivePUT/activity'
 require 'PipedrivePUT/activity-type'
 require 'PipedrivePUT/currencies'
+require 'PipedrivePUT/deal_fields'
+
 
 require 'json'
 require 'open-uri'

@@ -8,6 +8,12 @@ module PipedrivePUT
       JSON.parse(content)
     end 
 
+    def self.getid(file_id)
+      base = "https://api.pipedrive.com/v1/files/#{file_id}?api_token=#{@@key}"
+      content = open(base).read
+      p_data = JSON.parse(content)
+    end 
+   
 
     def self.downloadFile(file_id)
       file = "https://api.pipedrive.com/v1/files/#{file_id}/download?api_token=#{@@key}"

@@ -225,6 +225,24 @@ Get all Activity Types
   PipedrivePUT::Activity.getActivity_type
 ```
 
+## Filters 
+
+Get all filters 
+```ruby
+  PipedrivePUT::Filters.getFilters
+```
+
+## Files 
+Get all files
+```ruby 
+  PipedrivePUT::Files.getAllFiles
+```
+
+Download a specific file 
+```ruby 
+  PipedrivePUT::Files.downloadFile(< file_id >)
+```
+# ^This will download the specific file and place it in the root dir of your current dir
 
 ## Currencies
 
@@ -237,6 +255,20 @@ Search for Currencies based off currency name
 ```ruby
   PipedrivePUT::Currencies.getCurr(< currency_name >)
 ```
+
+If you want to get fancy and calculate exchange rates I added method in for that as well :)
+```ruby 
+   PipedrivePUT::Currencies.getExchangeRate(< currency_name >, < options = {} >)
+   #this uses the gem 'money' and 'google_currency'
+   #The options for this method are :amount and :ex_code
+   # :amount needs to look like this wholenumber_change so $100.80 would look like 100_80 
+   # :ex_code will be the currency code you want to calculate the exchange rate for
+   #Ex: 
+   PipedrivePUT::Currencies.getExchangeRate('Australian Dollar', :amount => "100_80", :ex_code => "USD")
+   #=> "$72.72"
+
+```
+
 
 ## Pipelines
 

@@ -1,4 +1,14 @@
+# (1.1.38) May 26th, 2016 2:10 PM
+        *Added filters and files classes"
 
+# (1.1.37) May 26th, 2016 9:22 AM 
+        *Return errors on missing search term"
+
+# (1.1.36) May 26th, 2016 9:00 AM
+        *"
+
+# (1.1.35) May 26th, 2016 8:21 AM
+        *Added currency calculator to currencies class" 
 
 # (1.1.34) May 24th, 2016 7:42 AM
         *Add activity method added- along with refactoring/tidying of classes, also added DealFields Class to get all deal fields. Added kevTheDev's 

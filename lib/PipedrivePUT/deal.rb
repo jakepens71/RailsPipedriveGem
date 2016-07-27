@@ -76,5 +76,25 @@ module PipedrivePUT
       end
       table
   	end
+
+    # id (required) - ID of the deal
+    # title - Deal title
+    # value - Value of the deal
+    # currency - Currency of the deal. Accepts a 3-character currency code
+    # user_id - ID of the user who will be marked as the owner of this deal
+    # person_id - ID of the person this deal will be associated with
+    # org_id - ID of the organization this deal will be associated with
+    # stage_id - ID of the stage this deal will be placed in a pipeline (note that you can't supply the ID of the pipeline as this will be assigned automatically based on stage_id)
+    # status - open = Open, won = Won, lost = Lost, deleted = Deleted
+    # lost_reason - Optional message about why the deal was lost (to be used when status=lost)
+    def self.updateDeal(id, options = {})
+      url = "https://api.pipedrive.com/v1/deals/#{id}"
+
+      response = HTTParty.put(
+        url,
+        body: options.to_json,
+        headers: { 'Content-type' => 'application/json' }
+      )
+    end
   end
 end

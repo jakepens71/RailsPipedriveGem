@@ -1,3 +1,6 @@
+# (1.1.39) July 27th, 2016 11:25 AM
+        *Merged Kevthedev's commits including search for deal call and dependency issues
+
 # (1.1.38) May 26th, 2016 2:10 PM
         *Added filters and files classes"
 

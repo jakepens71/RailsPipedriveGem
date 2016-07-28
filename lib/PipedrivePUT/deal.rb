@@ -88,7 +88,7 @@ module PipedrivePUT
     # status - open = Open, won = Won, lost = Lost, deleted = Deleted
     # lost_reason - Optional message about why the deal was lost (to be used when status=lost)
     def self.updateDeal(id, options = {})
-      url = "https://api.pipedrive.com/v1/deals/#{id}"
+      url = "https://api.pipedrive.com/v1/deals/#{id}?api_token=#{@@key}"
 
       response = HTTParty.put(
         url,

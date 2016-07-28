@@ -1,3 +1,6 @@
+# (1.1.40) July 28th, 2016 10:20 AM
+        *Merged Kevthedev's commits/fixes
+
 # (1.1.39) July 27th, 2016 11:25 AM
         *Merged Kevthedev's commits including search for deal call and dependency issues
 

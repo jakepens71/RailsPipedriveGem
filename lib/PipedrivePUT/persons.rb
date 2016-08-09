@@ -50,14 +50,14 @@ module PipedrivePUT
 
 		#Delete a person from Pipedrive
 		def self.deletePerson(id)
-      url = "https://api.pipedrive.com/v1/persons/id?api_token=#{@@key}"
+      url = "https://api.pipedrive.com/v1/persons/#{id}?api_token=#{@@key}"
 			HTTParty.delete(url)
 		end
 
 
 		#Update a Person
 		def self.updatePerson(id, options = {})
-      url = "https://api.pipedrive.com/v1/persons/id?api_token=#{@@key}"
+      url = "https://api.pipedrive.com/v1/persons/#{id}?api_token=#{@@key}"
 
 			HTTParty.put(
         url,

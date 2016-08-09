@@ -1,3 +1,6 @@
+# (1.2.0) August 9th, 2016 6:35 AM
+        *Merged tomchinery's commits 
+
 # (1.1.40) July 28th, 2016 10:20 AM
         *Merged Kevthedev's commits/fixes
 

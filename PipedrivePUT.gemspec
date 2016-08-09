@@ -6,7 +6,7 @@ require 'PipedrivePUT/version'
 Gem::Specification.new do |spec|
   spec.name          = "PipedrivePUT"
   spec.version       = PipedrivePUT::VERSION
-  spec.authors       = ["JakePens71", "Justin Snow"]
+  spec.authors       = ["Jacob Shay", "Justin Snow", "Kevin Edwards", "Tom Chinery"]
   spec.email         = ["jake_ps@comcast.net", "jrsnow8921@pennunited.com"]
   spec.summary       = 'Pipedrive gem to retrieve data from Pipedrive.com'
   spec.description   = 'Pipedrive gem support for activites, activity-types, deals, deal fields,organizations, organization fields, persons, pipelines, recents, search, users, and a bonus addition a currency exchange calculator.'

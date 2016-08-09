@@ -1,3 +1,6 @@
+# (1.2.1) August 9th, 2016 6:43 AM
+        *Giving credit to contributors Kevthedev and Tom have been added as authors of this gem as well :).
+
 # (1.2.0) August 9th, 2016 6:35 AM
         *Merged tomchinery's commits 
 

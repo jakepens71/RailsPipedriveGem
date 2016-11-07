@@ -25,7 +25,7 @@ module PipedrivePUT
 			  while count < @parsed["data"].size
 			  	table[tablesize] = @parsed["data"][count]
 			  	count = count +1
-			  	tablesi  ze = tablesize + 1
+			  	tablesize = tablesize + 1
 			  end
 
 			  @pagination = @parsed['additional_data']['pagination']

@@ -5,7 +5,6 @@ sudo: false
 
 
 before_install: 
-  - gem install httparty
   - gem install bundler
 
 env:
